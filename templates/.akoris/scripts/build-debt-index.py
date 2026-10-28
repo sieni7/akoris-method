@@ -41,14 +41,20 @@ THRESHOLD_TOTAL = 10
 
 
 def parse_frontmatter(path: Path) -> dict:
-    """Extrait le YAML frontmatter d'un fichier Markdown."""
+    """Extrait le YAML frontmatter d'un fichier Markdown.
+
+    Format attendu : le fichier commence par `---\n`, se termine par `\n---\n`.
+    Robuste aux `---` dans les valeurs YAML (ex. `risque: "a --- b"`).
+    """
     text = path.read_text(encoding="utf-8")
-    if not text.startswith("---"):
-        raise ValueError(f"{path.name} : pas de frontmatter YAML (doit commencer par ---)")
-    parts = text.split("---", 2)
-    if len(parts) < 3:
-        raise ValueError(f"{path.name} : frontmatter YAML incomplet (manque le --- de fermeture)")
-    data = yaml.safe_load(parts[1])
+    if not text.startswith("---\n"):
+        raise ValueError(f"{path.name} : pas de frontmatter YAML (doit commencer par '---\\n')")
+    # Chercher le prochain '\n---' APRÈS le début (index 4)
+    end = text.find("\n---", 4)
+    if end == -1:
+        raise ValueError(f"{path.name} : frontmatter YAML incomplet (manque le '---' de fermeture)")
+    frontmatter = text[4:end]
+    data = yaml.safe_load(frontmatter)
     if not isinstance(data, dict):
         raise ValueError(f"{path.name} : frontmatter YAML n'est pas un dict")
     return data
