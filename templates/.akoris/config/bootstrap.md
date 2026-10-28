@@ -78,6 +78,10 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 
 ### Phase 9 — Stack itérative
 
+⚠️ EXCEPTION : cette phase écrit dans `app/` (init projet, deps, CI).
+C'est la SEULE phase où l'Orchestrator touche `app/`. Justification : le
+bootstrap initialise la stack avant que le Builder n'existe.
+
 - Propose la pose de la stack, UNE brique à la fois :
   1. Init projet (package.json / pyproject.toml / etc.)
   2. Dépendances de base
@@ -95,8 +99,7 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 - Justifie que le bootstrap est complet.
 - Propose le Sprint 1 dans `.akoris/sprints/current_sprint.md`.
 - Met `.akoris/state.md` à `next_agent: builder, action: go`.
-- **STOP.** Attends `go` dans l'onglet B.
-
+- **STOP.** Attends `go` dans l'onglet B (le Builder exécute le Sprint 1).
 ---
 
 ## Règles
