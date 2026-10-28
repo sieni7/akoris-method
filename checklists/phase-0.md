@@ -24,7 +24,7 @@
     puis `cp -r akoris-method/templates/.akoris .`
 - [ ] `cd <nom-du-projet>`
 - [ ] Vérifier : `ls -la` → `app/`, `doc/`, `.akoris/`
-- [ ] Adapter `.akoris/contexte.md` §1 (nom du projet, stack, public)
+- [ ] Adapter `.akoris/projet.md` §1 (nom du projet, stack, public)
 
 ---
 
@@ -74,6 +74,6 @@
 - [ ] Les 3 onglets ont répondu "prêt"
 - [ ] Aucun `go` tapé en phase 0
 - [ ] Le bootstrap est lancé (Phase 1)
-- [ ] `.akoris/contexte.md` §1 adapté au projet
+- [ ] `.akoris/projet.md` §1 adapté au projet
 
 **✅ Phase 0 terminée. Passer à `checklists/bootstrap.md`.**
