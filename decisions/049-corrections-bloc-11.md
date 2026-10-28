@@ -9,7 +9,7 @@
 ## Décision
 
 Cette décision **clarifie et supersède partiellement** les décisions 002, 021 et 025
-sur deux points : le verrou `locked_by` et la résorption de dette.
+sur trois points : le verrou `locked_by`, la résorption de dette et la fermeture du sprint.
 Elle **ne modifie pas** les décisions elles-mêmes (immuables) ; elle **précise**
 ce qui fait foi en cas de divergence.
 
@@ -29,11 +29,16 @@ ce qui fait foi en cas de divergence.
 - `acceptee_definitivement` : **Validator uniquement**, avec ADR justifiant l'acceptation définitive.
 - L'Auditor **ne modifie pas** les fichiers `debt/` (scope inchangé). Il **valide dans `audit_report.md`**.
 
+### R3 — Phase: closed
+
+- Le Builder écrit `phase: closed` à la fin de la phase PUSH. L'Orchestrator ne réécrit pas `closed`, il vérifie que c'est fait.
+
 ## Justification
 
 - **Cohérence** : la revue cycle 2 a détecté des contradictions entre les décisions 002/021/025 et les templates.
 - **Séparation des pouvoirs** : l'Auditor valide, le Builder met à jour le statut, le Validator décide. La résorption est prouvée (audit), pas déclarée.
 - **Immutabilité préservée** : 002/021/025 restent « figées » dans l'historique ; 049 précise ce qui fait foi.
+- **Responsabilité de clôture** : le Builder écrit `phase: closed` à la fin de PUSH ; l'Orchestrator vérifie et signale toute anomalie.
 
 ## Alternatives écartées
 

@@ -58,8 +58,8 @@
 
 ## Étape 5 — Reset state.md (APRÈS commit)
 
-- [ ] Il met `state.md` à :
-  - `phase: closed`
+- [ ] Vérifier que le Builder a bien mis `phase: closed` (il l'a fait à la fin de son tour). Si ce n'est pas le cas, l'Orchestrator le signale comme anomalie.
+- [ ] L'Orchestrator met `state.md` à :
   - `next_agent: orchestrator`
   - `action: go`
   - `verdict: null`
