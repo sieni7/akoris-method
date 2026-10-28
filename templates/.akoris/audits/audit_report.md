@@ -42,9 +42,10 @@
 
 | # | Sévérité | Tâche | Description | Suggestion |
 |---|----------|-------|-------------|------------|
-| F1 | bloquant | T3 | <desc> | <suggestion> |
-| F2 | majeur | T2 | <desc> | <suggestion> |
-| F3 | mineur | T1 | <desc> | <suggestion> |
+| F1 | critique | T3 | <desc> | <suggestion> |
+| F2 | élevé | T2 | <desc> | <suggestion> |
+| F3 | moyen | T1 | <desc> | <suggestion> |
+| F4 | mineur | T1 | <desc> | <suggestion> |
 
 ## Recommandation de push
 

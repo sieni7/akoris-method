@@ -26,9 +26,9 @@
 | S1 | secrets | critique | <fichier:ligne> | <desc> | <suggestion> |
 | S2 | injection | élevé | <fichier:ligne> | <desc> | <suggestion> |
 | S3 | CVE | moyen | <dep> | <desc> | <suggestion> |
-| S4 | auth | faible | <fichier:ligne> | <desc> | <suggestion> |
+| S4 | auth | mineur | <fichier:ligne> | <desc> | <suggestion> |
 
-**Sévérités :** `critique` | `élevé` | `moyen` | `faible`
+**Sévérités :** `critique` | `élevé` | `moyen` | `mineur`
 
 ## Audit dépendances (CVE)
 
