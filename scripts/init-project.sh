@@ -183,12 +183,9 @@ EOF
 echo "→ git init -b main"
 ( cd "$TARGET_DIR" && git init -q -b main )
 
-echo "→ Personnalisation de .akoris/projet.md"
-if [ -f "$TARGET_DIR/.akoris/projet.md" ]; then
-    # Remplacer <nom-du-projet> par le nom réel
-    sed -i.bak "s/<nom-du-projet>/$PROJECT_NAME/g" "$TARGET_DIR/.akoris/projet.md"
-    rm -f "$TARGET_DIR/.akoris/projet.md.bak"
-fi
+echo "→ Personnalisation des fichiers Markdown de .akoris/"
+find "$TARGET_DIR/.akoris" -name "*.md" -exec sed -i.bak "s/<nom-du-projet>/$PROJECT_NAME/g" {} +
+find "$TARGET_DIR/.akoris" -name "*.md.bak" -delete
 
 echo ""
 echo "✅ Projet '$PROJECT_NAME' créé dans $TARGET_DIR"
