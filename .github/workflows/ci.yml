@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml pytest
+
+      - name: Run pytest
+        run: pytest tests/ -v
+
+      - name: Check debt index (template)
+        run: |
+          cd templates/.akoris
+          python scripts/build-debt-index.py --debt-dir debt
+          python scripts/build-debt-index.py --check --debt-dir debt || exit 1
+
+      - name: Shellcheck
+        run: |
+          sudo apt-get install -y shellcheck
+          shellcheck scripts/init-project.sh
