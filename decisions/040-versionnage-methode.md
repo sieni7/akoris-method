@@ -16,7 +16,7 @@ Chaque instance `.akoris/` note la **version de la méthode** dont elle est issu
 
 ```yaml
 method:
-  version: 1.0.0
+  version: 0.1.1
   commit: <hash-du-repo-akoris-method>
   installed_at: <YYYY-MM-DD>
   profile: standard
