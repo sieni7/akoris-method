@@ -1,6 +1,6 @@
 # Décision 042 — CLI — Adapters
 
-- **Statut :** figée
+- **Statut :** V2 / non implémentée
 - **Date :** 2026-10-28
 - **Contexte :** Bloc 8d (process)
 

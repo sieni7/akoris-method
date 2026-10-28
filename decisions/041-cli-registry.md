@@ -1,6 +1,6 @@
 # Décision 041 — CLI — Registry des onglets virtuels
 
-- **Statut :** figée
+- **Statut :** V2 / non implémentée
 - **Date :** 2026-10-28
 - **Contexte :** Bloc 8d (process)
 

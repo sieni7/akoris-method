@@ -85,3 +85,14 @@ def test_check_thresholds_does_not_exit_1():
     assert "check_thresholds(debts)" in block
     assert "sys.exit(0)" in block
     assert "sys.exit(1)" not in block
+
+
+
+def test_decisions_037_to_048_are_v2():
+    """N13 : les décisions 037–048 sont identifiées comme prévues en V2."""
+    import re
+    for number in range(37, 49):
+        matches = list((REPO_ROOT / "decisions").glob(f"{number:03d}-*.md"))
+        assert len(matches) == 1, f"Décision {number:03d} absente ou ambiguë"
+        content = matches[0].read_text(encoding="utf-8")
+        assert re.search(r"^- \*\*Statut :\*\* V2 / non implémentée$", content, re.MULTILINE), f"Décision {number:03d} statut incorrect"
