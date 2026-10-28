@@ -29,8 +29,8 @@
 
 ## Phase 3 — Contexte (§0 + §1-§21)
 
-- [ ] L'Orchestrator vérifie/complète `.akoris/contexte.md`
-- [ ] Vérifier : §0 AKORIS + §1 identité projet + §4 conventions
+- [ ] L'Orchestrator vérifie/complète `.akoris/projet.md`
+- [ ] Vérifier : §0 AKORIS (contexte) + §1 identité projet et §4 conventions (projet.md)
 - [ ] Taper `go` dans A
 
 ## Phase 4 — Roadmap (résumé)
@@ -46,9 +46,9 @@
 - [ ] Vérifier : objectif, périmètre IN/OUT, tâches (1 = 1 commit = 1 critère), tests, budget, risques
 - [ ] Taper `go` dans A
 
-## Phase 6 — Contexte §10 (roadmap intégrée)
+## Phase 6 — Roadmap (vérification)
 
-- [ ] L'Orchestrator intègre la roadmap dans `.akoris/contexte.md` §10
+- [ ] L'Orchestrator vérifie que `.akoris/roadmap/ROADMAP.md` est complet
 - [ ] Vérifier la cohérence
 - [ ] Taper `go` dans A
 
