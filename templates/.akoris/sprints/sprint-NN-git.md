@@ -16,14 +16,15 @@ cloture_le: <YYYY-MM-DDTHH:MM:SSZ>
 
 ## Commits
 
+> **Règle :** 1 tâche = 1+ commits (le commit principal + tests éventuels).
+> Le commit principal porte `Tâche: TN`. Les commits de test/docs associés
+> portent aussi `Tâche: TN`.
+
 | # | Hash | Type | Scope | Message | Tâche | Refs |
 |---|------|------|-------|---------|-------|------|
 | 1 | <hash> | feat | <scope> | <desc> | T1 | ADR-NNNN |
 | 2 | <hash> | test | <scope> | <desc> | T1 | — |
 | … | … | … | … | … | … | … |
-
-**Total :** <N> commits
-
 ## Push
 
 | # | Date | Branche | Destination | Hash final | Résultat |
