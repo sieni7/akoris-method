@@ -78,9 +78,7 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 
 ### Phase 9 — Stack itérative
 
-⚠️ EXCEPTION : cette phase écrit dans `app/` (init projet, deps, CI).
-C'est la SEULE phase où l'Orchestrator touche `app/`. Justification : le
-bootstrap initialise la stack avant que le Builder n'existe.
+⚠️ EXCEPTION : cette phase écrit dans app/ (init projet, deps, CI). C'est la SEULE exception au principe "seul le Builder écrit dans app/". Justification : initialiser la stack nécessite des commandes d'infrastructure (git, npm, etc.) que l'Orchestrator pose avant l'exécution du premier sprint.
 
 - Propose la pose de la stack, UNE brique à la fois :
   1. Init projet (package.json / pyproject.toml / etc.)

@@ -42,6 +42,7 @@ Chaque agent est un LLM avec un rôle, un scope d'écriture et un format de sort
 - **`doc/`** = le documentaire (doc technique + produit). Builder (tech) et Orchestrator (produit).
 - **`.akoris/`** = la gouvernance (contexte, state, roadmap, ADR, sprints, audits, dettes). Chaque agent a un scope défini.
 - Aucun agent ne modifie `app/` et `.akoris/state.md` de façon contradictoire dans le même tour.
+- Exception documentée : la phase 9 du bootstrap (init stack) est la seule où l'Orchestrator écrit dans `app/`.
 
 ---
 
