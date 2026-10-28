@@ -24,7 +24,7 @@
 
 - [ ] Taper `go` dans B
 - [ ] Le Builder lit `current_sprint.md`
-- [ ] Il exécute **tâche par tâche** : 1 tâche = 1 commit
+- [ ] Il exécute **tâche par tâche** : 1 tâche = 1+ commits
 - [ ] Chaque commit porte : `Sprint: NN`, `Tâche: TN`, `Refs:`
 - [ ] Il append au `sprint_report.md` (par tâche)
 - [ ] Il met à jour `sprint-NN-git.md` (commits)
