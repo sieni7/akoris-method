@@ -11,15 +11,16 @@
 
 - [ ] Verdict `go` ou `go with reserve` tapé dans C
 - [ ] Push effectué (branche `sprint-NN` → `main`)
-- [ ] Merge effectué (si Validator l'a demandé)
+- [ ] Merge effectué
 - [ ] Tag posé (si applicable)
 
 ---
 
-## Étape 1 — Archivage (Orchestrator, onglet A)
+## Étape 1 — Archivage (AVANT tout reset)
 
 - [ ] Taper `go` dans A (déclenche la clôture)
 - [ ] L'Orchestrator copie :
+  - `.akoris/state.md` → `.akoris/sprints/archive/sprint-NN-state.md` (⚠️ AVANT reset)
   - `.akoris/sprints/current_sprint.md` → `.akoris/sprints/archive/sprint-NN.md`
   - `.akoris/sprints/sprint_report.md` → `.akoris/sprints/archive/sprint-NN-report.md`
   - `.akoris/sprints/sprint-NN-git.md` → `.akoris/sprints/archive/sprint-NN-git.md`
@@ -30,37 +31,23 @@
 
 ---
 
-## Étape 2 — Régénération index (Orchestrator)
+## Étape 2 — Régénération index
 
 - [ ] L'Orchestrator exécute `python .akoris/scripts/build-debt-index.py`
 - [ ] Il vérifie que `index.md` est à jour
-- [ ] Il commit `chore(debt): regenerate index`
 
 ---
 
-## Étape 3 — Mise à jour roadmap (Orchestrator)
+## Étape 3 — Mise à jour roadmap
 
 - [ ] Il met à jour `.akoris/roadmap/ROADMAP.md` :
   - Sprint NN → `Statut: clôturé`
   - Version cible → ✅ (si tag posé)
-- [ ] Il détaille le sprint N+3 (maintient 3 d'avance) dans `.akoris/roadmap/sprint-(N+3).md`
+- [ ] Il détaille le sprint N+3 (maintient 3 d'avance)
 
 ---
 
-## Étape 4 — Mise à jour state.md (Orchestrator)
-
-- [ ] Il met `state.md` à :
-  - `phase: closed`
-  - `next_agent: orchestrator`
-  - `action: go`
-  - `verdict: null` (réinitialisé)
-  - `verdict_qa`, `verdict_secops`, `verdict_global: null`
-  - `reserves: []`
-  - `message: "Sprint NN clôturé"`
-
----
-
-## Étape 5 — Commit de clôture (Builder ou Orchestrator)
+## Étape 4 — Commit de clôture (AVANT reset state.md)
 
 - [ ] `git add -A`
 - [ ] `git commit -m "chore(state): close sprint NN"`
@@ -68,12 +55,27 @@
 
 ---
 
-## Étape 6 — Validation finale (Validator)
+## Étape 5 — Reset state.md (APRÈS commit)
+
+- [ ] Il met `state.md` à :
+  - `phase: closed`
+  - `next_agent: orchestrator`
+  - `action: go`
+  - `verdict: null`
+  - `verdict_qa`, `verdict_secops`, `verdict_global: null`
+  - `reserves: []`
+  - `message: "Sprint NN clôturé"`
+- [ ] `git add .akoris/state.md && git commit -m "chore(state): reset for sprint NN+1"`
+- [ ] `git push origin main`
+
+---
+
+## Étape 6 — Validation finale
 
 - [ ] Vérifier que `state.md` est cohérent
 - [ ] Vérifier que `ROADMAP.md` est à jour
 - [ ] Vérifier que `index.md` est à jour
-- [ ] Vérifier que le tag est posé (`git tag -l`)
+- [ ] Vérifier que l'archive `sprint-NN-state.md` contient le verdict
 - [ ] Si tout est bon → le sprint est **clôturé**
 
 ---
@@ -88,7 +90,7 @@
 
 ## Validation finale
 
-- [ ] Les archives sont créées
+- [ ] Les archives sont créées (dont `sprint-NN-state.md` avec verdict)
 - [ ] `index.md` est à jour
 - [ ] `ROADMAP.md` est à jour
 - [ ] `state.md` est réinitialisé
