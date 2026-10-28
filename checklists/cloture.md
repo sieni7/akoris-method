@@ -35,6 +35,7 @@
 
 - [ ] L'Orchestrator exécute `python .akoris/scripts/build-debt-index.py`
 - [ ] Il vérifie que `index.md` est à jour
+- [ ] Il commit `chore(debt): regenerate index` (c'est le seul commit de gouvernance que l'Orchestrator fait).
 
 ---
 
@@ -49,9 +50,9 @@
 
 ## Étape 4 — Commit de clôture (AVANT reset state.md)
 
-- [ ] `git add -A`
-- [ ] `git commit -m "chore(state): close sprint NN"`
-- [ ] `git push origin main`
+- [ ] Le Builder exécute `git add -A`
+- [ ] Le Builder commit `chore(state): close sprint NN` (acteur git = Builder, conforme à la décision 023).
+- [ ] Le Builder pousse sur `origin main`.
 
 ---
 
