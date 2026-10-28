@@ -9,17 +9,11 @@
 #   <chemin-parent>/<nom-du-projet>/
 #   ├── app/                    (exécutable vide)
 #   ├── doc/                    (documentaire vide)
+#   ├── checklists/             (copié depuis akoris-method/)
 #   ├── .akoris/                (copié depuis templates/.akoris/)
-#   └── .git/                   (git init)
-#
-# Ne fait PAS :
-#   - git commit initial (à toi de le faire)
-#   - adapter contexte.md (à toi de le faire)
-#   - lancer le bootstrap (à toi de le faire)
+#   └── .git/                   (git init -b main)
 
 set -euo pipefail
-
-# === Vérifications ===
 
 if [ $# -lt 1 ]; then
     echo "Usage : $0 <nom-du-projet> [<chemin-parent>]" >&2
@@ -38,14 +32,17 @@ if [ ! -d "$TEMPLATES_DIR/.akoris" ]; then
     exit 1
 fi
 
+if [ ! -d "$METHOD_DIR/checklists" ]; then
+    echo "ERREUR : checklists/ introuvable dans $METHOD_DIR" >&2
+    exit 1
+fi
+
 TARGET_DIR="$PARENT_DIR/$PROJECT_NAME"
 
 if [ -e "$TARGET_DIR" ]; then
     echo "ERREUR : $TARGET_DIR existe déjà." >&2
     exit 1
 fi
-
-# === Scaffold ===
 
 echo "→ Création de $TARGET_DIR"
 mkdir -p "$TARGET_DIR"
@@ -64,14 +61,67 @@ mkdir -p "$TARGET_DIR/doc/archive"
 echo "→ Copie de .akoris/ depuis templates/"
 cp -r "$TEMPLATES_DIR/.akoris" "$TARGET_DIR/.akoris"
 
+echo "→ Copie de checklists/ depuis $METHOD_DIR/"
+cp -r "$METHOD_DIR/checklists" "$TARGET_DIR/checklists"
+
+echo "→ Création des dossiers manquants dans .akoris/"
+mkdir -p "$TARGET_DIR/.akoris/debt"
+mkdir -p "$TARGET_DIR/.akoris/sprints/archive"
+mkdir -p "$TARGET_DIR/.akoris/audits/archive"
+mkdir -p "$TARGET_DIR/.akoris/roadmap"
+mkdir -p "$TARGET_DIR/.akoris/adr"
+
+echo "→ Création de debt/index.md"
+cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
+# INDEX DES DETTES — généré automatiquement
+
+> Ne pas éditer à la main. Régénérer via `scripts/build-debt-index.py`.
+
+| ID | Titre | Priorité | Statut | Sprint origine | Sprint résorption | ADR |
+|----|-------|----------|--------|----------------|-------------------|-----|
+EOF
+
+echo "→ Création de doc/tech/tests.md"
+cat > "$TARGET_DIR/doc/tech/tests.md" <<'EOF'
+# STRATÉGIE DE TESTS — <nom-du-projet>
+
+## Familles actives (V0)
+- TNR (unit + integration) : obligatoire, couverture ≥ 80%
+- Sécu checkpoint : aux sprints 🔒
+- UAT : implicite (verdict Validator)
+- E2E : [1 si parcours critique / aucun]
+
+## Où
+- app/tests/unit/
+- app/tests/integration/
+- app/tests/e2e/ (si actif)
+
+## Seuils
+| Métrique | go | go with reserve | no-go |
+|----------|-----|-----------------|-------|
+| Couverture | ≥80% | 60-79% | <60% |
+| Tests échoués | 0 | 0 (flaky doc.) | ≥1 |
+| Findings critiques | 0 | 0 | ≥1 |
+EOF
+
+echo "→ Création de app/tests/README.md"
+cat > "$TARGET_DIR/app/tests/README.md" <<'EOF'
+# app/tests/ — Tests
+
+- `unit/` : tests unitaires (TNR)
+- `integration/` : tests d'intégration (TNR)
+- `e2e/` : tests E2E
+- `uat/` : scénarios UAT
+- `fixtures/` : données partagées
+
+Voir `doc/tech/tests.md` pour la stratégie.
+EOF
+
 echo "→ Création des placeholders README"
 cat > "$TARGET_DIR/app/README.md" <<'EOF'
 # app/ — Produit exécutable
 
 Le code source du produit. Seul le Builder écrit ici.
-
-- `src/` : code source
-- `tests/` : tests (unit, integration, e2e, uat, fixtures)
 EOF
 
 cat > "$TARGET_DIR/doc/tech/README.md" <<'EOF'
@@ -116,17 +166,22 @@ Thumbs.db
 .akoris/doctor/
 EOF
 
-echo "→ git init"
-( cd "$TARGET_DIR" && git init -q )
+echo "→ git init -b main"
+( cd "$TARGET_DIR" && git init -q -b main )
 
-# === Message final ===
+echo "→ Personnalisation de .akoris/projet.md"
+if [ -f "$TARGET_DIR/.akoris/projet.md" ]; then
+    # Remplacer <nom-du-projet> par le nom réel
+    sed -i.bak "s/<nom-du-projet>/$PROJECT_NAME/g" "$TARGET_DIR/.akoris/projet.md"
+    rm -f "$TARGET_DIR/.akoris/projet.md.bak"
+fi
 
 echo ""
 echo "✅ Projet '$PROJECT_NAME' créé dans $TARGET_DIR"
 echo ""
 echo "Prochaines étapes :"
 echo "  1. cd $TARGET_DIR"
-echo "  2. Adapter .akoris/contexte.md (stack, règles métier)"
+echo "  2. Adapter .akoris/projet.md (stack, règles métier)"
 echo "  3. git add . && git commit -m 'init: bootstrap AKORIS'"
 echo "  4. Suivre .akoris/config/bootstrap.md dans l'onglet A"
 echo ""
