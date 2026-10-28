@@ -10,7 +10,7 @@ Modes :
     --check             : régénère en mémoire et compare avec index.md existant.
                           Exit 1 si divergence (CI).
     --check-thresholds  : vérifie les seuils anti-accumulation.
-                          Exit 1 si P0/P1 > 3 ou total > 10 (CI).
+                          Avertit si P0/P1 > 3 ou total > 10, sans bloquer.
     --debt-dir DIR      : chemin vers .akoris/debt/ (défaut: .akoris/debt)
 
 Dépendances : pyyaml (pip install pyyaml)
@@ -156,7 +156,7 @@ def main():
     parser.add_argument("--check", action="store_true",
                         help="Vérifie que index.md est à jour (exit 1 si divergence).")
     parser.add_argument("--check-thresholds", action="store_true",
-                        help="Vérifie les seuils anti-accumulation (exit 1 si dépassés).")
+                        help="Avertit si les seuils anti-accumulation sont dépassés (ne bloque pas).")
     parser.add_argument("--debt-dir", type=Path, default=Path(".akoris/debt"),
                         help="Chemin vers .akoris/debt/ (défaut: .akoris/debt)")
     args = parser.parse_args()
@@ -166,11 +166,10 @@ def main():
     index_path = args.debt_dir / "index.md"
 
     if args.check_thresholds:
-        if check_thresholds(debts):
-            print("Seuils respectés.")
-            sys.exit(0)
-        else:
-            sys.exit(1)
+        check_thresholds(debts)  # Affiche les warnings mais ne bloque plus
+        index_path.write_text(index_content, encoding="utf-8")
+        print(f"index.md régénéré ({len(debts)} dettes).")
+        sys.exit(0)
 
     if args.check:
         if not index_path.exists():

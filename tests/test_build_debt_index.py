@@ -103,8 +103,8 @@ cree_le: 2026-01-01
     assert "priorite" in err
 
 
-def test_thresholds_exceeded(tmp_path):
-    """Cas d'erreur : seuils dépassés (4 dettes P0/P1)."""
+def test_thresholds_warning(tmp_path):
+    """Les seuils dépassés avertissent, mais ne bloquent pas et l'index est généré."""
     debt_dir = tmp_path / "debt"
     debt_dir.mkdir()
     for i in range(1, 5):
@@ -124,5 +124,6 @@ cree_le: 2026-01-01
 # DT-{i:03d}
 """)
     code, out, err = run_script("--debt-dir", str(debt_dir), "--check-thresholds")
-    assert code == 1
+    assert code == 0
     assert "SEUIL DÉPASSÉ" in err
+    assert (debt_dir / "index.md").exists()

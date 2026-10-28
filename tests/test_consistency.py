@@ -72,3 +72,16 @@ def test_no_duplicate_section_numbers():
     for section in ("P1", "P4", "P5", "P20", "P21"):
         assert re.search(rf"^## {section} —", content, re.MULTILINE), f"Section {section} absente"
     assert not re.search(r"^## §(?:1|4|5|20|21)\b", content, re.MULTILINE)
+
+
+
+def test_check_thresholds_does_not_exit_1():
+    """N8 : le mode --check-thresholds avertit sans retourner un exit 1."""
+    import re
+    content = read("templates/.akoris/scripts/build-debt-index.py")
+    match = re.search(r"if args\.check_thresholds:(.*?)(?=\n    if args\.check:)", content, re.DOTALL)
+    assert match, "Bloc --check-thresholds absent"
+    block = match.group(1)
+    assert "check_thresholds(debts)" in block
+    assert "sys.exit(0)" in block
+    assert "sys.exit(1)" not in block
