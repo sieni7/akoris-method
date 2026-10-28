@@ -33,7 +33,7 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 ### Phase 3 — Contexte (§0 + §1-§21)
 
 - Vérifie que `.akoris/contexte.md` est complet (§0 AKORIS + §1-§21).
-- Complète les sections projet (§1 identité projet, §4 conventions, etc.) avec les infos fournies par le Validator.
+- Complète les sections projet dans `.akoris/projet.md` (identité, conventions) avec les infos fournies par le Validator.
 - Justifie les choix.
 - **STOP.** Attends `go`.
 
@@ -47,13 +47,13 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 ### Phase 5 — Roadmap (détail des 3 premiers sprints)
 
 - Propose le détail des 3 premiers sprints dans `.akoris/roadmap/sprint-01.md`, `sprint-02.md`, `sprint-03.md`.
-- Chaque sprint : objectif, périmètre IN/OUT, tâches (1 tâche = 1 commit = 1 critère), critères d'acceptation, tests, budget, risques.
+- Chaque sprint : objectif, périmètre IN/OUT, tâches (1 tâche = 1+ commits = 1 critère), critères d'acceptation, tests, budget, risques.
 - Justifie.
 - **STOP.** Attends `go`.
 
-### Phase 6 — Contexte §10 (roadmap intégrée)
+### Phase 6 — Roadmap (vérification)
 
-- Intègre le résumé de la roadmap dans `.akoris/contexte.md` §10.
+- Vérifie que `.akoris/roadmap/ROADMAP.md` est complet et cohérent. (La roadmap ne doit PAS être dupliquée dans contexte.md ou projet.md.)
 - Justifie.
 - **STOP.** Attends `go`.
 
