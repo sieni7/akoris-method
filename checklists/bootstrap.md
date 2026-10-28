@@ -87,8 +87,7 @@
 - [ ] Il propose `.akoris/sprints/current_sprint.md` (Sprint 1)
 - [ ] Il met `.akoris/state.md` à `next_agent: builder, action: go`
 - [ ] Lire la proposition
-- [ ] Taper `go` dans A (dernière fois)
-
+- [ ] Taper `go` **dans l'onglet B** (le Builder exécute le Sprint 1)
 ---
 
 ## Validation finale
