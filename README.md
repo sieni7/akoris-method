@@ -99,4 +99,8 @@ des outils de développement utilisés.
 
 ## Licence
 
-À définir.
+- Code : MIT
+- Livre : CC-BY-4.0
+- Méthode : Apache-2.0
+
+Voir le fichier LICENSE.
