@@ -61,12 +61,11 @@
 - [ ] Taper `go` dans B (déclenche le push)
 - [ ] Le Builder :
   - `git push origin sprint-NN`
-  - `git checkout main && git merge sprint-NN`
-  - `git tag vX.Y.Z`
+  - `git checkout main && git merge sprint-NN` (⚠️ merge SYSTÉMATIQUE après `go`)
+  - `git tag vX.Y.Z` (si `tag_cible` défini)
   - `git push origin main --tags`
 - [ ] Il met à jour `sprint-NN-git.md` (§Push, §Merge, §Tag)
 - [ ] Il met `state.md` à `phase: closed, next_agent: orchestrator`
-
 ## Phase CLÔTURE (onglet A)
 
 - [ ] Suivre `checklists/cloture.md`
