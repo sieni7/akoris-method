@@ -40,7 +40,7 @@ Le projet n'a **pas besoin** de `akoris-method/` pour fonctionner — il a seule
 
 1. Cloner ce repo (ou le garder à côté)
 2. Lancer `scripts/init-project.sh <nom-du-projet>`
-3. Adapter `.akoris/contexte.md` (stack, règles métier)
+3. Adapter `.akoris/projet.md` (stack, règles métier)
 4. Suivre `checklists/phase-0.md`
 5. Lancer le bootstrap : `.akoris/config/bootstrap.md`
 
