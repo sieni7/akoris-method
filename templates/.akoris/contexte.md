@@ -156,7 +156,10 @@ Validator (B): go        → Builder push + merge + tag
   - Dettes ouvertes P0/P1 > 3 → le prochain sprint **doit** inclure une tâche de résorption.
   - Dettes ouvertes totales > 10 → **`no-go` recommandé** par l'Auditor, **jugé** par le Validator. Le Validator peut passer outre avec `go with reserve` (dette ouverte tracée).
 - **Création :** Validator décide → Orchestrator crée le fichier (ID auto = dernier + 1).
-- **Statut :** Builder met à jour le statut (pas l'index).
+- **Statut :** Builder met à jour le statut dans le fichier dette.
+  - `ouverte` → `en_cours` : libre.
+  - `en_cours` → `resorbee` : **UNIQUEMENT** si `audit_report.md` contient un finding positif confirmant la résorption. Sinon, statut reste `en_cours`.
+  - `acceptee_definitivement` : Validator uniquement, avec ADR.
 - **Régénération index :** Orchestrator en clôture de sprint (`chore(debt): regenerate index`).
 - **Cycle :** `ouverte` → `en cours` → `résorbée` | `acceptée définitivement`.
 
@@ -226,8 +229,10 @@ updated_at: <timestamp>
 3. Lecture de `state.md` **au début du tour uniquement**.
 4. Écriture de `state.md` **en dernier**, de façon atomique.
 5. Si `locked_by != moi` ET `locked_by != null` → l'agent répond "pas mon tour" et s'arrête.
-5bis. Si `locked_by == null` → le verrou est libre, l'agent peut agir (si `next_agent == lui` ET `action == go` ET `GO` humain reçu).
-6. `state.md` commité en clôture de sprint uniquement (`chore(state)`).
+5bis. Si `locked_by == null` → le verrou est libre.
+6. L'agent **écrit** `locked_by: <lui>` au DÉBUT de son tour (après `GO` + vérification `next_agent == lui`).
+7. L'agent **libère** `locked_by: null` à la FIN de son tour (avant d'écrire `next_agent`).
+8. `state.md` commité en clôture de sprint uniquement (`chore(state)`).
 
 ---
 
@@ -271,7 +276,7 @@ Refs: ADR-NNNN, DT-NNN
 - **Types :** `feat`, `fix`, `feat!`/`fix!`/`BREAKING CHANGE:`, `docs`, `test`, `refactor`, `chore`, `sec`.
 - **Scopes :** `auth`, `api`, `ui`, `db`, `ci`, `doc`, `akoris`, `state`, `debt`…
 - **commitlint** en CI rejette les non-conformes.
-- **1 tâche = 1 commit = 1 critère d'acceptation.**
+- **1 tâche = 1+ commits = 1 critère d'acceptation.** (commit principal + tests/docs associés)
 
 ### Push
 
@@ -378,7 +383,7 @@ app/tests/
 
 ## §17 — DÉCOUPAGE DES TÂCHES
 
-- **Règle :** 1 tâche = 1 commit = 1 critère d'acceptation.
+- **Règle :** 1 tâche = 1+ commits = 1 critère d'acceptation.
 - **Seuil :** 20 tâches max par sprint.
 - **Footer commit :** `Tâche: TN` + `Sprint: NN` + `Refs:`.
 - **Compteurs :** `taches_total` / `taches_done` dans `state.md`.
