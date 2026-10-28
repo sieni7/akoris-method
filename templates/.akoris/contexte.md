@@ -16,12 +16,7 @@
 
 ## §1 — IDENTITÉ DU PROJET
 
-- **Nom :** <nom-du-projet>
-- **Objectif :** <1 phrase — ce que le produit doit faire>
-- **Public cible :** <qui l'utilise>
-- **Stack :** <langages, frameworks, versions>
-- **Contraintes :** <budget, délais, dépendances imposées>
-- **Hors périmètre :** <ce qu'on ne fait PAS>
+Voir `.akoris/projet.md` (sections spécifiques au projet : nom, objectif, stack, public, contraintes).
 
 ---
 
@@ -52,18 +47,16 @@ Chaque agent est un LLM avec un rôle, un scope d'écriture et un format de sort
 
 ## §4 — CONVENTIONS DE COLLABORATION
 
-- **Langue :** <fr/en>
-- **Style de code :** <ex. ESLint Airbnb, Prettier, snake_case…>
-- **Nommage des fichiers :** <ex. kebab-case>
-- **Format de sortie du Builder :** diff unifié OU fichier complet (préciser)
-- **Le Builder ne supprime jamais un fichier sans autorisation explicite.**
-- **Aucune dépendance ajoutée sans mention dans `sprint_report.md`.**
+Voir `.akoris/projet.md` (langue, style, nommage, format de sortie).
+Les règles génériques restent ci-dessous.
 
 ---
 
 ## §5 — GARDE-FOUS
 
 **Interdits absolus :**
+
+Les garde-fous spécifiques au projet sont définis dans `.akoris/projet.md` §5.
 - ❌ Supprimer un fichier hors scope sans GO explicite
 - ❌ `git push` direct sans verdict `go` du Validator
 - ❌ Modifier `.akoris/contexte.md` (réservé au Validator)
@@ -161,7 +154,7 @@ Validator (B): go        → Builder push + merge + tag
 - **`index.md`** : généré par `.akoris/scripts/build-debt-index.py`, **versionné**, **vérifié en CI**.
 - **Seuils anti-accumulation :**
   - Dettes ouvertes P0/P1 > 3 → le prochain sprint **doit** inclure une tâche de résorption.
-  - Dettes ouvertes totales > 10 → **`no-go` automatique** sur tout nouveau sprint tant que résorption non planifiée.
+  - Dettes ouvertes totales > 10 → **`no-go` recommandé** par l'Auditor, **jugé** par le Validator. Le Validator peut passer outre avec `go with reserve` (dette ouverte tracée).
 - **Création :** Validator décide → Orchestrator crée le fichier (ID auto = dernier + 1).
 - **Statut :** Builder met à jour le statut (pas l'index).
 - **Régénération index :** Orchestrator en clôture de sprint (`chore(debt): regenerate index`).
@@ -232,7 +225,8 @@ updated_at: <timestamp>
 2. Un agent n'agit que si `next_agent == lui` ET `action == go` ET `GO` humain reçu.
 3. Lecture de `state.md` **au début du tour uniquement**.
 4. Écriture de `state.md` **en dernier**, de façon atomique.
-5. Si `locked_by != moi` → l'agent répond "pas mon tour" et s'arrête.
+5. Si `locked_by != moi` ET `locked_by != null` → l'agent répond "pas mon tour" et s'arrête.
+5bis. Si `locked_by == null` → le verrou est libre, l'agent peut agir (si `next_agent == lui` ET `action == go` ET `GO` humain reçu).
 6. `state.md` commité en clôture de sprint uniquement (`chore(state)`).
 
 ---
