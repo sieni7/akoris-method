@@ -71,15 +71,29 @@ mkdir -p "$TARGET_DIR/.akoris/audits/archive"
 mkdir -p "$TARGET_DIR/.akoris/roadmap"
 mkdir -p "$TARGET_DIR/.akoris/adr"
 
-echo "→ Création de debt/index.md"
-cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
-# INDEX DES DETTES — généré automatiquement
+echo "→ Génération de debt/index.md via build-debt-index.py"
+if command -v python3 >/dev/null 2>&1; then
+    ( cd "$TARGET_DIR" && python3 .akoris/scripts/build-debt-index.py 2>/dev/null ) || {
+        echo "⚠️  build-debt-index.py a échoué (pyyaml manquant ?)."
+        echo "    Création d'un index.md minimal — lance le script plus tard."
+        cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
+# INDEX DES DETTES — à régénérer
 
-> Ne pas éditer à la main. Régénérer via `scripts/build-debt-index.py`.
+> Lance `python3 .akoris/scripts/build-debt-index.py` après avoir installé pyyaml.
 
 | ID | Titre | Priorité | Statut | Sprint origine | Sprint résorption | ADR |
 |----|-------|----------|--------|----------------|-------------------|-----|
 EOF
+    }
+else
+    echo "⚠️  python3 non trouvé. index.md minimal créé."
+    cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
+# INDEX DES DETTES — à régénérer
+
+| ID | Titre | Priorité | Statut | Sprint origine | Sprint résorption | ADR |
+|----|-------|----------|--------|----------------|-------------------|-----|
+EOF
+fi
 
 echo "→ Création de doc/tech/tests.md"
 cat > "$TARGET_DIR/doc/tech/tests.md" <<'EOF'
