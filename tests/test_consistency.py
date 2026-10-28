@@ -62,3 +62,13 @@ def test_locked_by_rules_consistent():
     content = read("templates/.akoris/contexte.md")
     assert "écrit" in content.lower() and "locked_by" in content
     assert "libère" in content.lower() and "locked_by" in content
+
+
+
+def test_no_duplicate_section_numbers():
+    """N6 : les sections spécifiques du projet utilisent P1/P4/P5/P20/P21."""
+    import re
+    content = read("templates/.akoris/projet.md")
+    for section in ("P1", "P4", "P5", "P20", "P21"):
+        assert re.search(rf"^## {section} —", content, re.MULTILINE), f"Section {section} absente"
+    assert not re.search(r"^## §(?:1|4|5|20|21)\b", content, re.MULTILINE)

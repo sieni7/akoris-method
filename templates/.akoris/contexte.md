@@ -14,7 +14,7 @@
 
 ---
 
-## §1 — IDENTITÉ DU PROJET
+## §1 — IDENTITÉ DU PROJET (voir projet.md P1)
 
 Voir `.akoris/projet.md` (sections spécifiques au projet : nom, objectif, stack, public, contraintes).
 
@@ -45,14 +45,14 @@ Chaque agent est un LLM avec un rôle, un scope d'écriture et un format de sort
 
 ---
 
-## §4 — CONVENTIONS DE COLLABORATION
+## §4 — CONVENTIONS DE COLLABORATION (voir projet.md P4)
 
 Voir `.akoris/projet.md` (langue, style, nommage, format de sortie).
 Les règles génériques restent ci-dessous.
 
 ---
 
-## §5 — GARDE-FOUS
+## §5 — GARDE-FOUS (voir projet.md P5)
 
 **Interdits absolus :**
 

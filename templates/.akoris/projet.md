@@ -5,7 +5,7 @@
 
 ---
 
-## §1 — Identité du projet
+## P1 — Identité du projet
 
 - **Nom :** <nom-du-projet>
 - **Objectif :** <1 phrase — ce que le produit doit faire>
@@ -16,7 +16,7 @@
 
 ---
 
-## §4 — Conventions de collaboration
+## P4 — Conventions de collaboration
 
 - **Langue :** <fr/en>
 - **Style de code :** <ex. ESLint Airbnb, Prettier, snake_case…>
@@ -25,14 +25,14 @@
 
 ---
 
-## §5 — Garde-fous spécifiques
+## P5 — Garde-fous spécifiques
 
 - <interdit spécifique au projet>
 - <obligation spécifique au projet>
 
 ---
 
-## §20 — Stratégie de tests (spécifique au projet)
+## P20 — Stratégie de tests (spécifique au projet)
 
 - **Familles actives :** <TNR, sécu, UAT, E2E>
 - **Seuils :** <couverture, findings>
@@ -40,7 +40,7 @@
 
 ---
 
-## §21 — Skills Packs
+## P21 — Skills Packs
 
 ```yaml
 skills:
