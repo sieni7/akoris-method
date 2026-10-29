@@ -22,7 +22,7 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 - Statuts V2 explicites pour les décisions concernées.
 - Une clarification référencée : décision 049.
 - README aligné sur le contenu réel du dépôt.
-- Couverture de licence complète, titulaire Sieni.
+- Couverture de licence complète, titulaire Oulai Sieni Tarek.
 
 ### Changed
 - Décompte : **48 décisions figées (001–048) + 1 clarification (049)**.
