@@ -29,3 +29,5 @@ Un fichier unique `.akoris/state.md` sert de **machine à états** et de **verro
 - **Fichier lock** : plus fragile (oubli de suppression).
 - **Tour de rôle implicite** : sujet aux dérives.
 - **Pas de verrou** : chaos garanti.
+
+> Clarifiée partiellement par ADR-049 (2026-10-28).

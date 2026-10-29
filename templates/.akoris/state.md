@@ -7,6 +7,7 @@ phase: setup
 next_agent: null
 action: idle
 locked_by: null
+locked_since: null
 
 # Verdicts (remplis en phase review)
 verdict: null

@@ -194,6 +194,7 @@ phase: setup | plan | execution | audit | review | closed
 next_agent: orchestrator | builder | auditor | validator | null
 action: go | idle | review | replan | blocked | push
 locked_by: <agent actif — un seul>
+locked_since: <timestamp>
 verdict: null | go | go_with_reserve | no_go
 verdict_qa: null | go | go_with_reserve | no_go
 verdict_secops: null | go | go_with_reserve | no_go
@@ -228,12 +229,13 @@ updated_at: <timestamp>
 1. **Un seul `locked_by` à la fois.**
 2. Un agent n'agit que si `next_agent == lui` ET `action == go` ET `GO` humain reçu.
 3. Lecture de `state.md` **au début du tour uniquement**.
-4. Écriture de `state.md` **en dernier**, de façon atomique.
+4. Écriture de `state.md` **en dernier**, de façon atomique, sauf `locked_by` qui est écrit au début du tour et libéré à la fin.
 5. Si `locked_by != moi` ET `locked_by != null` → l'agent répond "pas mon tour" et s'arrête.
 5bis. Si `locked_by == null` → le verrou est libre.
 6. L'agent **écrit** `locked_by: <lui>` au DÉBUT de son tour (après `GO` + vérification `next_agent == lui`).
 7. L'agent **libère** `locked_by: null` à la FIN de son tour (avant d'écrire `next_agent`).
-8. `state.md` commité en clôture de sprint uniquement (`chore(state)`).
+8. Si un verrou est orphelin (`locked_by` non nul et `locked_since` datant de plus de 30 minutes), seul le Validator (humain) peut le libérer après `go force-unlock`. Il écrit `locked_by: null`, `locked_since: null` et `message: "force-unlock par Validator à <timestamp>"` dans `state.md`; l’événement horodaté est ajouté à `sprint_report.md`.
+9. `state.md` commité en clôture de sprint uniquement (`chore(state)`).
 
 ---
 

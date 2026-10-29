@@ -55,3 +55,9 @@
 
 - <blocage 1> — résolu le <date> par <action>
 - <blocage 2> — en cours
+
+---
+
+## Événements de gouvernance
+
+- <timestamp> — `force-unlock` par Validator — `locked_by: null`, `locked_since: null`; message tracé dans `state.md`.
