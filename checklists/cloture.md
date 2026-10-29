@@ -35,7 +35,7 @@
 
 - [ ] L'Orchestrator exécute `python .akoris/scripts/build-debt-index.py`
 - [ ] Il vérifie que `index.md` est à jour
-- [ ] Il commit `chore(debt): regenerate index` (c'est le seul commit de gouvernance que l'Orchestrator fait).
+- [ ] Le Builder commit `chore(debt): regenerate index` (le Builder est le seul acteur Git, conformément à la décision 023).
 
 ---
 
@@ -66,8 +66,8 @@
   - `verdict_qa`, `verdict_secops`, `verdict_global: null`
   - `reserves: []`
   - `message: "Sprint NN clôturé"`
-- [ ] `git add .akoris/state.md && git commit -m "chore(state): reset for sprint NN+1"`
-- [ ] `git push origin main`
+- [ ] Le Builder exécute `git add .akoris/state.md` et commit `chore(state): reset for sprint NN+1`.
+- [ ] Le Builder pousse sur `origin main`.
 
 ---
 
