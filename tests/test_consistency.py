@@ -40,7 +40,7 @@ def test_no_context_md_modification_by_orchestrator():
         content = read(f).lower()
         # Chercher "adapter contexte.md" ou "compléter contexte.md"
         import re
-        bad = re.findall(r"(adapter|compléter|modifier)\s+[`.]*contexte\.md", content)
+        bad = re.findall(r"(adapter|compléter|modifier)\s+[`.]*(?:\.akoris/)?contexte\.md", content)
         assert not bad, f"{f} contient encore une instruction d'éditer contexte.md"
 
 
