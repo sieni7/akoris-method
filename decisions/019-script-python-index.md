@@ -8,7 +8,7 @@
 
 ## Décision
 
-L'index des dettes est généré par un **script Python** (`scripts/build-debt-index.py`).
+L'index des dettes est généré par un **script Python** (`templates/.akoris/scripts/build-debt-index.py`).
 
 ## Règles
 

@@ -13,7 +13,7 @@ Les dettes vivent dans `.akoris/debt/` : **1 fichier par dette** (`DT-NNN-titre.
 ## Règles
 
 - 1 fichier/dette : `DT-NNN-titre-kebab.md`.
-- `index.md` généré par `scripts/build-debt-index.py`.
+- `index.md` généré par `templates/.akoris/scripts/build-debt-index.py`.
 - Pas de sous-dossiers dans `debt/`.
 - ID séquentiel, jamais renuméroté.
 - Une dette résorbée reste (son statut change).

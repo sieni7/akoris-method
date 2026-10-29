@@ -73,7 +73,7 @@ mkdir -p "$TARGET_DIR/.akoris/adr"
 
 echo "→ Génération de debt/index.md via build-debt-index.py"
 if command -v python3 >/dev/null 2>&1; then
-    ( cd "$TARGET_DIR" && python3 .akoris/scripts/build-debt-index.py 2>/dev/null ) || {
+    ( cd "$TARGET_DIR" && python3 .akoris/scripts/build-debt-index.py ) || {
         echo "⚠️  build-debt-index.py a échoué (pyyaml manquant ?)."
         echo "    Création d'un index.md minimal — lance le script plus tard."
         cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
