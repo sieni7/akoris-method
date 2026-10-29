@@ -33,3 +33,5 @@ L'Auditor exerce un mandat **QA permanent** à chaque sprint : tests, critères 
 - **QA par le Builder** : auto-validation.
 - **QA par le Validator** : goulot d'étranglement.
 - **Résorption auto-déclarée par le Builder** : biais, contredit la séparation des pouvoirs.
+
+> Clarifiée partiellement par ADR-049 (2026-10-28).

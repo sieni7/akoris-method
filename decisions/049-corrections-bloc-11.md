@@ -1,8 +1,9 @@
-# Décision 049 — Corrections Bloc 11 (N3, N4)
+# Décision 049 — Clarifications des règles de verrou, résorption et clôture
 
 - **Statut :** figée
+- **Type :** clarification
 - **Date :** 2026-10-28
-- **Contexte :** Bloc 11 (revue cycle 2, corrections N3-N4)
+- **Contexte :** Bloc 11 (revue cycle 2 : règles de verrou (002), de résorption (021) et de clôture (025))
 
 ---
 
@@ -31,7 +32,7 @@ ce qui fait foi en cas de divergence.
 
 ### R3 — Phase: closed
 
-- Le Builder écrit `phase: closed` à la fin de la phase PUSH. L'Orchestrator ne réécrit pas `closed`, il vérifie que c'est fait.
+- **Clarification du 2026-10-29 :** Le Builder écrit `phase: closed` en fin de PUSH (opération technique) ; l'Orchestrator vérifie et confirme. Le Validator reste décideur de la transition `review → closed` (décision de gouvernance).
 
 ## Justification
 

@@ -28,3 +28,5 @@ Le Validator **décide** l'ouverture (verdict `go with reserve`), l'Orchestrator
 - **Validator crée tout** : charge manuelle, risque d'oubli.
 - **Builder crée** : sort de son rôle (il résorbe, il n'ouvre pas).
 - **Auditor crée** : sort de son rôle (il propose, il ne décide pas).
+
+> Clarifiée partiellement par ADR-049 (2026-10-28).
