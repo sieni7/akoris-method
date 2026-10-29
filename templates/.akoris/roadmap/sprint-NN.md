@@ -1,6 +1,6 @@
 # SPRINT NN — <titre>
 
-> Détail du sprint. 1 tâche = 1+ commits = 1 critère d'acceptation.
+> Détail du sprint. 1 tâche → 1 critère d'acceptation → ≥ 1 commit (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).
 > Max 20 tâches. Au-delà → découpage en 2 sprints.
 
 ---

@@ -279,7 +279,7 @@ Refs: ADR-NNNN, DT-NNN
 - **Types :** `feat`, `fix`, `feat!`/`fix!`/`BREAKING CHANGE:`, `docs`, `test`, `refactor`, `chore`, `sec`.
 - **Scopes :** `auth`, `api`, `ui`, `db`, `ci`, `doc`, `akoris`, `state`, `debt`…
 - **commitlint** en CI rejette les non-conformes.
-- **1 tâche = 1+ commits = 1 critère d'acceptation.** (commit principal + tests/docs associés)
+- **1 tâche → 1 critère d'acceptation → ≥ 1 commit (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).**
 
 ### Push
 
@@ -386,7 +386,7 @@ app/tests/
 
 ## §17 — DÉCOUPAGE DES TÂCHES
 
-- **Règle :** 1 tâche = 1+ commits = 1 critère d'acceptation.
+- **Règle :** 1 tâche → 1 critère d'acceptation → ≥ 1 commit (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).
 - **Seuil :** 20 tâches max par sprint.
 - **Footer commit :** `Tâche: TN` + `Sprint: NN` + `Refs:`.
 - **Compteurs :** `taches_total` / `taches_done` dans `state.md`.

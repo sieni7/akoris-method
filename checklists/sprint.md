@@ -13,7 +13,7 @@
 - [ ] Il détaille le sprint N+3 (maintient 3 d'avance)
 - [ ] Il écrit `.akoris/sprints/current_sprint.md` avec :
   - Objectif, périmètre IN/OUT
-  - Tâches (1 = 1 commit = 1 critère), colonne `Test` remplie
+  - Tâches (1 tâche → 1 critère d'acceptation → ≥ 1 commit), colonne `Test` remplie
   - Propositions (options + recommandation)
   - Critères d'acceptation du sprint
 - [ ] Il met `state.md` à `next_agent: builder, action: go`
@@ -24,7 +24,7 @@
 
 - [ ] Taper `go` dans B
 - [ ] Le Builder lit `current_sprint.md`
-- [ ] Il exécute **tâche par tâche** : 1 tâche = 1+ commits
+- [ ] Il exécute **tâche par tâche** : 1 tâche → 1 critère d'acceptation → ≥ 1 commit (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).
 - [ ] Chaque commit porte : `Sprint: NN`, `Tâche: TN`, `Refs:`
 - [ ] Il append au `sprint_report.md` (par tâche)
 - [ ] Il met à jour `sprint-NN-git.md` (commits)
