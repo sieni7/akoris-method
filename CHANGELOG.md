@@ -6,32 +6,31 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 
 ---
 
+## [Unreleased]
+
+### Added
+- Rédaction du livre (parties 0 à VIII) en cours.
+
+---
+
 ## [0.1.1] — 2026-10-29
 
-### En cours
-- Construction du kit de référence (blocs 1 à 10)
-- Rédaction du livre (parties 0 à VIII)
+### Added
+- Kit de référence AKORIS : blocs 1 à 11.
+- CI et trois fichiers de tests (`tests/test_build_debt_index.py`, `tests/test_consistency.py`, `tests/test_init_project.py`).
+- Texte Apache-2.0 complet et table de couverture des fichiers dans `LICENSE`.
+- Statuts V2 explicites pour les décisions concernées.
+- Une clarification référencée : décision 049.
+- README aligné sur le contenu réel du dépôt.
+- Couverture de licence complète, titulaire Sieni.
 
-### Fixed (Bloc 9 — corrections urgence 1)
-- `build-debt-index.py` : bug `split("---")` corrigé (robuste aux `---` dans les valeurs YAML)
-- `build-debt-index.py` : tests pytest ajoutés (`tests/test_build_debt_index.py`)
-- `init-project.sh` : `git init -b main` (au lieu de `master`)
-- `init-project.sh` : création de `debt/index.md`, `sprints/archive/`, `audits/archive/`, `doc/tech/tests.md`, `app/tests/README.md`
-- `init-project.sh` : copie de `checklists/` dans le projet
-- `cloture.md` : archivage de `state.md` (avec verdict) AVANT le reset
-- `CHANGELOG.md` : 62 → 48 décisions (correction du chiffre)
-- `LICENSE` : ajout (MIT + CC-BY-4.0 + Apache-2.0)
+### Changed
+- Décompte : **48 décisions figées (001–048) + 1 clarification (049)**.
 
-### Fixed (Bloc 10 — contradictions)
-- `contexte.md` §7 : `no-go automatique` → `no-go recommandé` (respecte "l'humain décide")
-- `contexte.md` §9 : `locked_by: null` = libre (pas "pas mon tour")
-- `contexte.md` : sections projet retirées (renvoi vers `projet.md`)
-- `projet.md` : nouveau fichier (sections spécifiques au projet)
-- `orchestrator.md` : `doc/produit/` autorisé
-- `bootstrap.md` : phase 9 = exception documentée, phase 10 = `go` dans B
-- `checklists/bootstrap.md` : phase 10 = `go` dans B
-- `checklists/sprint.md` : merge systématique après `go`
-- `sprint-NN-git.md` : `1 tâche = 1+ commits`
+### Fixed
+- Bloc 9 : corrections urgentes du générateur d’index, de l’initialisation, de la clôture, du décompte et des licences.
+- Bloc 10 : contradictions de gouvernance, configuration projet, bootstrap et clôture.
+- Blocs 1 à 11 : corrections et harmonisations de cohérence.
 
 ---
 
