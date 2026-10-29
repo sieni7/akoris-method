@@ -3,6 +3,7 @@
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
+CONTEXT_MD_EDIT_PATTERN = r"(adapter|compléter|modifier)\s+[`.]*(?:\.akoris/)?contexte\.md"
 
 
 def read(path: str) -> str:
@@ -40,8 +41,16 @@ def test_no_context_md_modification_by_orchestrator():
         content = read(f).lower()
         # Chercher "adapter contexte.md" ou "compléter contexte.md"
         import re
-        bad = re.findall(r"(adapter|compléter|modifier)\s+[`.]*(?:\.akoris/)?contexte\.md", content)
+        bad = re.findall(CONTEXT_MD_EDIT_PATTERN, content)
         assert not bad, f"{f} contient encore une instruction d'éditer contexte.md"
+
+
+def test_context_md_detection_regex():
+    """R4 : la regex détecte contexte.md et .akoris/contexte.md."""
+    import re
+    assert re.search(CONTEXT_MD_EDIT_PATTERN, "adapter contexte.md")
+    assert re.search(CONTEXT_MD_EDIT_PATTERN, "adapter .akoris/contexte.md")
+    assert not re.search(CONTEXT_MD_EDIT_PATTERN, "adapter autre.md")
 
 
 def test_decision_049_exists():
