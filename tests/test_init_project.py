@@ -1,5 +1,6 @@
 """Tests pour scripts/init-project.sh."""
 
+import os
 import subprocess
 import sys
 import tempfile
@@ -11,9 +12,13 @@ SCRIPT = REPO_ROOT / "scripts" / "init-project.sh"
 
 def run_init(project_name: str, parent: Path):
     """Exécute init-project.sh et retourne le résultat."""
+    env = {
+        **os.environ,
+        "PATH": f"{Path(sys.executable).parent}:{os.environ['PATH']}",
+    }
     return subprocess.run(
         ["bash", str(SCRIPT), project_name, str(parent)],
-        capture_output=True, text=True,
+        capture_output=True, text=True, env=env,
     )
 
 
@@ -51,15 +56,23 @@ def test_init_copies_checklists(tmp_path):
 
 
 def test_init_index_check_passes_on_fresh_project(tmp_path):
-    """N1 : --check doit réussir sur un projet fraîchement créé."""
+    """N1 : le projet frais garde un index valide avec ou sans PyYAML."""
     result = run_init("test-proj", tmp_path)
     assert result.returncode == 0, f"stderr: {result.stderr}"
     proj = tmp_path / "test-proj"
-    # Lancer --check
-    check = subprocess.run(
-        [sys.executable, ".akoris/scripts/build-debt-index.py", "--check"],
-        cwd=str(proj), capture_output=True, text=True,
+    yaml_check = subprocess.run(
+        [sys.executable, "-c", "import yaml"], capture_output=True, text=True,
     )
-    assert check.returncode == 0, (
-        f"--check a échoué sur projet frais. stderr: {check.stderr}, stdout: {check.stdout}"
-    )
+    if yaml_check.returncode == 0:
+        check = subprocess.run(
+            [sys.executable, ".akoris/scripts/build-debt-index.py", "--check"],
+            cwd=str(proj), capture_output=True, text=True,
+        )
+        assert check.returncode == 0, (
+            f"--check a échoué sur projet frais. stderr: {check.stderr}, stdout: {check.stdout}"
+        )
+    else:
+        assert "PyYAML non détecté" in result.stdout
+        assert (proj / ".akoris/debt/index.md").read_text(encoding="utf-8") == (
+            (REPO_ROOT / "templates/.akoris/debt/index.md").read_text(encoding="utf-8")
+        )

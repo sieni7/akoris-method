@@ -23,7 +23,7 @@ from pathlib import Path
 try:
     import yaml
 except ImportError:
-    print("ERREUR : pyyaml requis. Installe-le : pip install pyyaml", file=sys.stderr)
+    print("ERREUR : PyYAML requis. Installe-le : pip install pyyaml", file=sys.stderr)
     sys.exit(2)
 
 REQUIRED_FIELDS = [

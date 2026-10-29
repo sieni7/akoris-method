@@ -74,27 +74,11 @@ mkdir -p "$TARGET_DIR/.akoris/roadmap"
 mkdir -p "$TARGET_DIR/.akoris/adr"
 
 echo "→ Génération de debt/index.md via build-debt-index.py"
-if command -v python3 >/dev/null 2>&1; then
-    ( cd "$TARGET_DIR" && python3 .akoris/scripts/build-debt-index.py ) || {
-        echo "⚠️  build-debt-index.py a échoué (pyyaml manquant ?)."
-        echo "    Création d'un index.md minimal — lance le script plus tard."
-        cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
-# INDEX DES DETTES — à régénérer
-
-> Lance `python3 .akoris/scripts/build-debt-index.py` après avoir installé pyyaml.
-
-| ID | Titre | Priorité | Statut | Sprint origine | Sprint résorption | ADR |
-|----|-------|----------|--------|----------------|-------------------|-----|
-EOF
-    }
+if command -v python3 >/dev/null 2>&1 && python3 -c 'import yaml' >/dev/null 2>&1; then
+    ( cd "$TARGET_DIR" && python3 .akoris/scripts/build-debt-index.py )
 else
-    echo "⚠️  python3 non trouvé. index.md minimal créé."
-    cat > "$TARGET_DIR/.akoris/debt/index.md" <<'EOF'
-# INDEX DES DETTES — à régénérer
-
-| ID | Titre | Priorité | Statut | Sprint origine | Sprint résorption | ADR |
-|----|-------|----------|--------|----------------|-------------------|-----|
-EOF
+    echo "⚠️ PyYAML non détecté. L'index des dettes est copié depuis le template."
+    echo "Installe PyYAML avant d'ajouter des dettes : pip install pyyaml"
 fi
 
 echo "→ Création de app/tests/README.md"
