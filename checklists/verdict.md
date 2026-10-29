@@ -81,6 +81,7 @@ verdict_global = go              si QA=go ET SecOps=go
   go with reserve: <détails des réserves, séparés par virgule>
   ```
   Exemple : `go with reserve: auth sans refresh token, tests partiels paiement`
+- `go with reserve` sans détail → **refusé : aucun verdict enregistré, le Validator reformule**.
 - [ ] Si `no-go` :
   ```
   no-go: <raison>

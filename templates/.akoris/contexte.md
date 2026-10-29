@@ -125,7 +125,7 @@ no-go: <raison>
 - `no-go: …` = retour à l'orchestrator pour re-planification (raison obligatoire).
 
 ### Règles strictes
-- `go with reserve` **sans détail** → refusé (= go).
+- `go with reserve` sans détail → **refusé : aucun verdict enregistré, le Validator reformule**.
 - `no-go` **sans raison** → refusé (= reformuler).
 - Verdict toujours écrit dans `.akoris/state.md` (champ `verdict`).
 - `no-go` formel **uniquement dans C**. En A et B : `go` ou rien.
