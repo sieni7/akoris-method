@@ -167,8 +167,8 @@ akoris-method/
 ├── docs/                  ← the book
 ├── decisions/             ← 48 decisions + 1 clarification
 ├── checklists/            ← phase 0, bootstrap, sprint, verdict, closure
-├── scripts/               ← init-project.sh; scripts/validate-method.py — coming soon (Block 11, P0)
-├── tests/                 ← 18 Python tests
+├── scripts/               ← init-project.sh; scripts/validate-method.py — available
+├── tests/                 ← 21 Python tests across 4 files
 ├── templates/doc/         ← project documentation templates to copy
 ├── templates/.akoris/     ← templates to copy
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
@@ -195,7 +195,7 @@ Contributions are welcome. Before submitting a PR:
 1. Read [`METHOD.md`](METHOD.md) and [`decisions/`](decisions/).
 2. Check that the change complies with the 48 decisions
    (or propose an ADR for a new decision).
-3. Run `pytest` (17 passing tests expected).
+3. Run `pytest` (21 Python tests across 4 files).
 4. Run `shellcheck scripts/*.sh` (0 warnings expected).
 5. Open an **issue** before a major PR.
 
