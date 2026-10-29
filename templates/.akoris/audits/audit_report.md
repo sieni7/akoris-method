@@ -43,9 +43,9 @@
 | # | Sévérité | Tâche | Description | Suggestion |
 |---|----------|-------|-------------|------------|
 | F1 | critique | T3 | <desc> | <suggestion> |
-| F2 | élevé | T2 | <desc> | <suggestion> |
+| F2 | eleve | T2 | <desc> | <suggestion> |
 | F3 | moyen | T1 | <desc> | <suggestion> |
-| F4 | mineur | T1 | <desc> | <suggestion> |
+| F4 | faible | T1 | <desc> | <suggestion> |
 
 ## Résorption
 

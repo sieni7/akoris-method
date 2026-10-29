@@ -24,17 +24,17 @@
 | # | Catégorie | Sévérité | Localisation | Description | Suggestion |
 |---|-----------|----------|--------------|-------------|------------|
 | S1 | secrets | critique | <fichier:ligne> | <desc> | <suggestion> |
-| S2 | injection | élevé | <fichier:ligne> | <desc> | <suggestion> |
+| S2 | injection | eleve | <fichier:ligne> | <desc> | <suggestion> |
 | S3 | CVE | moyen | <dep> | <desc> | <suggestion> |
-| S4 | auth | mineur | <fichier:ligne> | <desc> | <suggestion> |
+| S4 | auth | faible | <fichier:ligne> | <desc> | <suggestion> |
 
-**Sévérités :** `critique` | `élevé` | `moyen` | `mineur`
+**Sévérités :** `critique` | `eleve` | `moyen` | `faible`
 
 ## Audit dépendances (CVE)
 
 | Package | Version | CVE | Sévérité | Correctif |
 |---------|---------|-----|----------|-----------|
-| <pkg>   | <ver>   | CVE-XXXX-YYYY | élevé | <version> |
+| <pkg>   | <ver>   | CVE-XXXX-YYYY | eleve | <version> |
 
 ## Audit secrets
 
@@ -53,7 +53,7 @@
 | # | Sévérité | Description | Suggestion |
 |---|----------|-------------|------------|
 | S1 | critique | <desc> | <suggestion> |
-| S2 | élevé | <desc> | <suggestion> |
+| S2 | eleve | <desc> | <suggestion> |
 
 **Règle :** 0 finding critique = `go` | 1+ critique = `no-go` (sécu bloquante)
 

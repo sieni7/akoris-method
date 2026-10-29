@@ -23,7 +23,7 @@
 | Tests TNR échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Tests E2E échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Scénarios UAT | 100% validés | 1 partiel | ≥ 1 échoué |
-| Findings bloquants | 0 | 0 | ≥ 1 |
+| Findings critiques | 0 | 0 | ≥ 1 |
 
 **Verdict QA :**
 - [ ] `go` si toutes les colonnes "go"
@@ -37,15 +37,15 @@
 | Métrique | `go` | `go with reserve` | `no-go` |
 |----------|------|-------------------|---------|
 | Findings critiques | 0 | 0 | ≥ 1 |
-| Findings élevés | 0 | 0 | ≥ 1 |
+| Findings eleve | 0 | 0 | ≥ 1 |
 | Findings moyens | 0 | 1-3 | > 3 |
 
 **Verdict SecOps :**
-- [ ] `go` si 0 critique, 0 élevé, 0 moyen
-- [ ] `go with reserve` si 0 critique, 0 élevé, 1-3 moyens
-- [ ] `no-go` si ≥ 1 critique OU ≥ 1 élevé
+- [ ] `go` si 0 critique, 0 eleve, 0 moyen
+- [ ] `go with reserve` si 0 critique, 0 eleve, 1-3 moyens
+- [ ] `no-go` si ≥ 1 critique OU ≥ 1 eleve
 
-**Règle : sécu bloquante. 1 critique = no-go global, même si QA=go.**
+**Règle : sécu critique. 1 critique = no-go global, même si QA=go.**
 
 ---
 
