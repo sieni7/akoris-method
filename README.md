@@ -48,12 +48,12 @@ Le projet n'a **pas besoin** de `akoris-method/` pour fonctionner — il a seule
 
 ## Documentation
 
-- **Le livre :** `docs/` (9 parties, 34 chapitres)
-- **Les décisions :** `decisions/` (48 décisions figées)
+- **Le livre :** `docs/` (1 chapitre pour l'instant — ch. 0; les suivants à venir)
+- **Les décisions :** `decisions/` (48 décisions figées + 1 clarification, décision 049)
 - **Les templates :** `templates/.akoris/` (à copier)
 - **Les checklists :** `checklists/` (phase 0, bootstrap, sprint, verdict, clôture)
-- **Les scripts :** `scripts/` (init, build-debt-index, validate)
-- **Les exemples :** `examples/` (MVP, SaaS)
+- **Les scripts :** `scripts/` (`init-project.sh`; `validate-method` à venir)
+- **Les exemples :** `examples/` (MVP, SaaS — à venir)
 
 ---
 
@@ -68,8 +68,8 @@ akoris-method/
 ├── templates/.akoris/     ← à copier dans un projet
 ├── checklists/            ← à suivre
 ├── decisions/             ← les décisions figées
-├── scripts/               ← init, build-debt-index, validate
-└── examples/              ← exemples fictifs
+├── scripts/               ← init-project; validate-method à venir
+└── examples/              ← MVP, SaaS à venir
 ```
 
 ---
