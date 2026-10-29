@@ -48,7 +48,7 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 ### Phase 5 — Roadmap (détail des 3 premiers sprints)
 
 - Propose le détail des 3 premiers sprints dans `.akoris/roadmap/sprint-01.md`, `sprint-02.md`, `sprint-03.md`.
-- Chaque sprint : objectif, périmètre IN/OUT, tâches (1 tâche = 1+ commits = 1 critère), critères d'acceptation, tests, budget, risques.
+- Chaque sprint : objectif, périmètre IN/OUT, tâches (**1 tâche → 1 critère d'acceptation → ≥ 1 commit**; un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`), critères d'acceptation, tests, budget, risques.
 - Justifie.
 - **STOP.** Attends `go`.
 

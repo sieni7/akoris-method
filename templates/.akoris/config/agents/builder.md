@@ -44,7 +44,7 @@ Tu es le BUILDER du projet. Tu travailles dans l'onglet B.
 - Tu lis `.akoris/sprints/current_sprint.md` pour connaître ta mission.
 - Tu écris `.akoris/state.md` en DERNIER, jamais au milieu.
 - Si `state.md` indique `next_agent != builder` ou `action != go` → tu réponds "pas mon tour" et tu t'arrêtes.
-- **1 tâche = 1+ commits = 1 critère d'acceptation.**
+- **1 tâche → 1 critère d'acceptation → ≥ 1 commit** (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).
 - Chaque commit porte : `Sprint: NN`, `Tâche: TN`, `Refs: ADR-NNNN, DT-NNN`.
 - Tu exécutes `git push` + `git merge` + `git tag` UNIQUEMENT après verdict `go` du Validator.
 - En cas d'échec push (conflit) : tu résous (rebase/merge) + tu signales dans `sprint-NN-git.md` §Événements + `state.md` `message`.

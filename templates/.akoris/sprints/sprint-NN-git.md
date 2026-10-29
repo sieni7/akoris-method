@@ -16,7 +16,7 @@ cloture_le: <YYYY-MM-DDTHH:MM:SSZ>
 
 ## Commits
 
-> **Règle :** 1 tâche = 1+ commits (le commit principal + tests éventuels).
+> **Règle :** **1 tâche → 1 critère d'acceptation → ≥ 1 commit** (un ou plusieurs commits par tâche, tous référencés par `Tâche: TN`).
 > Le commit principal porte `Tâche: TN`. Les commits de test/docs associés
 > portent aussi `Tâche: TN`.
 
