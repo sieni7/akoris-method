@@ -257,3 +257,13 @@ Apache License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+## Fichiers couverts
+
+| Fichier / Dossier | Licence |
+|-------------------|---------|
+| `README.md`, `CHANGELOG.md`, `METHOD.md`, `decisions/`, `templates/.akoris/` (hors `scripts/`), `checklists/` | Apache-2.0 |
+| `docs/` | CC-BY-4.0 (livre) |
+| `scripts/`, `templates/.akoris/scripts/`, `tests/` | MIT (code) |
+| `.github/workflows/` | Apache-2.0 |
+| `LICENSE` | Apache-2.0 (textes de licence) |
