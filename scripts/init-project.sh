@@ -60,6 +60,8 @@ mkdir -p "$TARGET_DIR/doc/archive"
 
 echo "→ Copie de .akoris/ depuis templates/"
 cp -r "$TEMPLATES_DIR/.akoris" "$TARGET_DIR/.akoris"
+echo "→ Copie de doc/ depuis templates/"
+cp -r "$TEMPLATES_DIR/doc/." "$TARGET_DIR/doc/"
 
 echo "→ Copie de checklists/ depuis $METHOD_DIR/"
 cp -r "$METHOD_DIR/checklists" "$TARGET_DIR/checklists"
@@ -95,29 +97,6 @@ else
 EOF
 fi
 
-echo "→ Création de doc/tech/tests.md"
-cat > "$TARGET_DIR/doc/tech/tests.md" <<'EOF'
-# STRATÉGIE DE TESTS — <nom-du-projet>
-
-## Familles actives (V0)
-- TNR (unit + integration) : obligatoire, couverture ≥ 80%
-- Sécu checkpoint : aux sprints 🔒
-- UAT : implicite (verdict Validator)
-- E2E : [1 si parcours critique / aucun]
-
-## Où
-- app/tests/unit/
-- app/tests/integration/
-- app/tests/e2e/ (si actif)
-
-## Seuils
-| Métrique | go | go with reserve | no-go |
-|----------|-----|-----------------|-------|
-| Couverture | ≥80% | 60-79% | <60% |
-| Tests échoués | 0 | 0 (flaky doc.) | ≥1 |
-| Findings critiques | 0 | 0 | ≥1 |
-EOF
-
 echo "→ Création de app/tests/README.md"
 cat > "$TARGET_DIR/app/tests/README.md" <<'EOF'
 # app/tests/ — Tests
@@ -138,17 +117,6 @@ cat > "$TARGET_DIR/app/README.md" <<'EOF'
 Le code source du produit. Seul le Builder écrit ici.
 EOF
 
-cat > "$TARGET_DIR/doc/tech/README.md" <<'EOF'
-# doc/tech/ — Documentation technique
-
-Écrite par le Builder. Voir `tests.md` pour la stratégie de tests.
-EOF
-
-cat > "$TARGET_DIR/doc/produit/README.md" <<'EOF'
-# doc/produit/ — Documentation produit
-
-Écrite par l'Orchestrator. Voir `changelog.md` pour l'historique.
-EOF
 
 echo "→ Copie de .gitignore"
 cat > "$TARGET_DIR/.gitignore" <<'EOF'

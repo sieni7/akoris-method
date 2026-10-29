@@ -1,0 +1,14 @@
+# Budget tokens par sprint
+# Le champ `budget_remaining` dans state.md est initialisé à `initial` au début
+# de chaque sprint, puis décrémenté par les agents.
+
+initial: 500000                 # tokens pour le sprint (à ajuster)
+
+per_agent:
+  orchestrator: 50000           # budget typique par tour
+  builder: 400000
+  auditor: 50000
+
+alerts:
+  warning_at: 0.8               # alerte à 80% du budget
+  block_at: 0.95                # blocage à 95% (l'agent demande confirmation)

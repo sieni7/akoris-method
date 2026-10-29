@@ -1,0 +1,31 @@
+# Configuration des modèles LLM par onglet
+# Adapte selon tes fournisseurs (OpenAI, Anthropic, Google, open-weights, etc.)
+
+orchestrator:
+  onglet: A
+  role: "Planifie, découpe, propose, coordonne"
+  model: "<à configurer>"        # ex. claude-sonnet-4, gpt-4, gemini-pro
+  provider: "<à configurer>"     # ex. anthropic, openai, google
+  temperature: 0.3
+  max_tokens: 8192
+
+builder:
+  onglet: B
+  role: "Exécute, code, commit, push"
+  model: "<à configurer>"
+  provider: "<à configurer>"
+  temperature: 0.2
+  max_tokens: 16384
+
+auditor:
+  onglet: C
+  role: "QA permanent + SecOps checkpoint"
+  model: "<à configurer>"
+  provider: "<à configurer>"
+  temperature: 0.1
+  max_tokens: 8192
+
+validator:
+  onglet: "(humain)"
+  role: "Autorise, tranche, ouvre les dettes"
+  # Pas de modèle — c'est l'humain
