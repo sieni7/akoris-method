@@ -167,8 +167,8 @@ akoris-method/
 ├── docs/                  ← the book
 ├── decisions/             ← 48 decisions + 1 clarification
 ├── checklists/            ← phase 0, bootstrap, sprint, verdict, closure
-├── scripts/               ← init-project.sh (validate-method.py forthcoming)
-├── tests/                 ← 17 Python tests
+├── scripts/               ← init-project.sh; scripts/validate-method.py — coming soon (Block 11, P0)
+├── tests/                 ← 18 Python tests
 ├── templates/doc/         ← project documentation templates to copy
 ├── templates/.akoris/     ← templates to copy
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
