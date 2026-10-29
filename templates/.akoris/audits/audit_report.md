@@ -47,6 +47,12 @@
 | F3 | moyen | T1 | <desc> | <suggestion> |
 | F4 | mineur | T1 | <desc> | <suggestion> |
 
+## Résorption
+
+| Dette | Statut attendu | Finding | Preuve |
+|-------|----------------|---------|--------|
+| DT-NNN | resorbee | ✅ positif / ❌ négatif | <commit, test> |
+
 ## Recommandation de push
 
 - **Verdict QA :** `go` | `go with reserve` | `no-go`
