@@ -34,9 +34,9 @@
 | Tests TNR échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Tests E2E échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Scénarios UAT | 100% validés | 1 partiel | ≥ 1 échoué |
-| Findings sécu critiques | 0 | 0 | ≥ 1 |
-| Findings sécu élevés | 0 | 0 | ≥ 1 |
-| Findings sécu moyens | 0 | 1-3 | > 3 |
+| Findings sécu critique | 0 | 0 | ≥ 1 |
+| Findings sécu eleve | 0 | 0 | ≥ 1 |
+| Findings sécu moyen | 0 | 1-3 | > 3 |
 
 ## Grille de verdicts
 

@@ -20,18 +20,18 @@ Seuils objectifs : couverture **≥ 80%** (go), **60-79%** (reserve), **< 60%** 
 | Tests TNR échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Tests E2E échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Scénarios UAT | 100% | 1 partiel | ≥ 1 échoué |
-| Findings critiques | 0 | 0 | ≥ 1 |
-| Findings élevés | 0 | 0 | ≥ 1 |
-| Findings moyens | 0 | 1-3 | > 3 |
+| Findings critique | 0 | 0 | ≥ 1 |
+| Findings eleve | 0 | 0 | ≥ 1 |
+| Findings moyen | 0 | 1-3 | > 3 |
 
 ### Définition des findings
 
 | Sévérité | Définition | Exemple |
 |----------|-----------|---------|
-| **Critique** | Bloque la livraison, risque sécurité/prod | Secret exposé, injection SQL, CVE critique |
-| **Élevé** | Impact fort, à corriger avant prod | Auth manquante, CVE élevé, dépendance abandonnée |
-| **Moyen** | Impact modéré, à tracer | Couverture sous seuil, code dupliqué, TODO non tracé |
-| **Mineur** | Impact faible, informatif | Style, commentaire obsolète, nommage |
+| **critique** | Bloque la livraison, risque sécurité/prod | Secret exposé, injection SQL, CVE critique |
+| **eleve** | Impact fort, à corriger avant prod | Auth manquante, CVE eleve, dépendance abandonnée |
+| **moyen** | Impact modéré, à tracer | Couverture sous seuil, code dupliqué, TODO non tracé |
+| **faible** | Impact faible, informatif | Style, commentaire obsolète, nommage |
 
 ## Justification
 

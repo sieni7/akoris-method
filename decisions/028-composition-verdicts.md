@@ -24,7 +24,7 @@ verdict_global = go              si QA=go ET SecOps=go
 ## Justification
 
 - La sécurité est **bloquante** (1 critique = refus).
-- La QA est **graduable** (couverture, findings mineurs).
+- La QA est **graduable** (couverture, findings de sévérité faible).
 - Composition explicite = pas d'ambiguïté.
 
 ## Alternatives écartées

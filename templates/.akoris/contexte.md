@@ -358,12 +358,13 @@ Refs: ADR-NNNN, DT-NNN
 | Tests TNR échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Tests E2E échoués | 0 | 0 (flaky doc.) | ≥ 1 |
 | Scénarios UAT | 100% validés | 1 partiel | ≥ 1 échoué |
-| Findings sécu critiques | 0 | 0 | ≥ 1 |
-| Findings sécu élevés | 0 | 0 | ≥ 1 |
-| Findings sécu moyens | 0 | 1-3 | > 3 |
+| Findings sécu critique | 0 | 0 | ≥ 1 |
+| Findings sécu eleve | 0 | 0 | ≥ 1 |
+| Findings sécu moyen | 0 | 1-3 | > 3 |
 
 ### Règles
 
+- **Échelle canonique de sévérité :** `critique | eleve | moyen | faible`. Les descriptions fonctionnelles (ex. "effet bloquant") ne sont pas des catégories.
 - **Critère de test obligatoire** par tâche (colonne `Test` dans `current_sprint.md`).
 - Une tâche **sans** critère de test est **invalide**.
 - **Grille par famille** (TNR, E2E, UAT, sécu séparés).
