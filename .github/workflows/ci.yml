@@ -29,6 +29,9 @@ jobs:
       - name: Check debt index (template)
         run: python templates/.akoris/scripts/build-debt-index.py --check --debt-dir templates/.akoris/debt
 
+      - name: Validate method coherence
+        run: python scripts/validate-method.py --strict
+
       - name: Shellcheck
         run: |
           sudo apt-get install -y shellcheck
