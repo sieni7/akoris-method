@@ -57,7 +57,7 @@ Les règles génériques restent ci-dessous.
 
 **Interdits absolus :**
 
-Les garde-fous spécifiques au projet sont définis dans `.akoris/projet.md` §5.
+Les garde-fous spécifiques au projet sont définis dans `.akoris/projet.md` P5.
 - ❌ Supprimer un fichier hors scope sans GO explicite
 - ❌ `git push` direct sans verdict `go` du Validator
 - ❌ Modifier `.akoris/contexte.md` (réservé au Validator)
