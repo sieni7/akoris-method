@@ -50,13 +50,17 @@ class Result:
         self.warnings = []
         self.checks = 0
         self.passed = 0
+        self.current_check_has_error = False
 
     def ok(self, name):
         self.checks += 1
-        self.passed += 1
+        if not self.current_check_has_error:
+            self.passed += 1
+        self.current_check_has_error = False
 
     def error(self, msg):
         self.errors.append(msg)
+        self.current_check_has_error = True
 
     def warning(self, msg):
         self.warnings.append(msg)
@@ -95,7 +99,10 @@ def check_contexte(repo, r):
         r.error("contexte.md absent")
         return
     c = p.read_text(encoding="utf-8")
-    missing = [s for s in CONTEXTE_SECTIONS if f"## {s}" not in c]
+    missing = [
+        s for s in CONTEXTE_SECTIONS
+        if not re.search(rf"^## {re.escape(s)}(?:\s|—|$)", c, re.M)
+    ]
     if missing:
         r.error(f"contexte.md : sections manquantes : {missing}")
     else:
@@ -145,11 +152,16 @@ def check_links(repo, r):
             r.error(f"... et {len(broken)-10} autres")
     else:
         r.ok(f"{checked} liens Markdown valides")
+    if checked < 20:
+        r.warning("Peu de liens contrôlés")
 
 
 def check_absolute_paths(repo, r):
     found = []
-    for p in (repo / "templates").rglob("*"):
+    templates_dir = repo / "templates"
+    if not templates_dir.exists() or not any(p.is_file() for p in templates_dir.rglob("*")):
+        r.warning("Dossier templates/ vide")
+    for p in templates_dir.rglob("*"):
         if not p.is_file():
             continue
         try:
