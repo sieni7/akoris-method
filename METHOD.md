@@ -76,7 +76,27 @@ un projet dont la dette est **connue, tracée et pilotée**.
 
 ---
 
-## 6. Pour aller plus loin
+## 6. Outils compatibles
+
+AKORIS est **indépendant des outils**. Il requiert trois capacités :
+
+| Prérequis | Pourquoi |
+|-----------|----------|
+| **3 agents LLM simultanés** | Onglets A/B/C (Orchestrator, Builder, Auditor) |
+| **Un dossier partagé** | `.akoris/` (source de vérité unique) |
+| **Un verrou fichier** | `state.md` (un seul agent actif à la fois) |
+
+**Outil de référence :** [OpenCode](https://github.com/opencode-ai/opencode) —
+interface multi-onglets, dossier partagé, verrou natif.
+
+**Alternatives :** Manus, Cursor, Windsurf, Claude Projects, ou tout outil
+permettant 3 sessions LLM simultanées avec accès fichier partagé.
+
+**Non compatible :** chat unique, outil sans accès fichier, outil sans multi-onglets.
+
+---
+
+## 7. Pour aller plus loin
 
 - **Le livre :** `docs/` (9 parties, 34 chapitres)
 - **Les décisions :** `decisions/` (48 décisions figées)

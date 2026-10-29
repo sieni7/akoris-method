@@ -21,6 +21,7 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 
 - Vérifie l'état du repo (fichiers existants, arborescence actuelle).
 - Vérifie que `.akoris/contexte.md` existe (créé par le Validator ou par toi).
+- Vérifie que l'outil utilisé est compatible (3 onglets + dossier partagé + verrou).
 - Justifie : ce que tu vas créer, dans quel ordre, pourquoi.
 - **STOP.** Attends `go`.
 

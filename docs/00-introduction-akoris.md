@@ -171,6 +171,19 @@ Le livre est organisé en **9 parties** (0 à VIII) et **34 chapitres**.
 
 ---
 
+## 0.8 Outils compatibles
+
+AKORIS est indépendant des outils. Il requiert : 3 agents LLM simultanés,
+un dossier partagé, un verrou fichier.
+
+**Outil de référence :** OpenCode.
+**Alternatives :** Manus, Cursor, Windsurf, Claude Projects, ou tout outil
+permettant 3 sessions LLM simultanées avec accès fichier partagé.
+
+Voir `README.md` section « Outils compatibles » pour les détails.
+
+---
+
 > **AKORIS — L'IA produit ; le contrôle vérifie ; l'autorité humaine décide.**
 
 ---

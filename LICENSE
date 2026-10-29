@@ -262,7 +262,7 @@ Apache License
 
 | Fichier / Dossier | Licence |
 |-------------------|---------|
-| `README.md`, `CHANGELOG.md`, `METHOD.md`, `decisions/`, `templates/.akoris/` (hors `scripts/`), `checklists/` | Apache-2.0 |
+| `README.md`, `README.en.md`, `CHANGELOG.md`, `CONTACT.md`, `METHOD.md`, `decisions/`, `templates/.akoris/` (hors `scripts/`), `templates/doc/`, `checklists/` | Apache-2.0 |
 | `docs/` | CC-BY-4.0 (livre) |
 | `scripts/`, `templates/.akoris/scripts/`, `tests/` | MIT (code) |
 | `.github/workflows/` | Apache-2.0 |

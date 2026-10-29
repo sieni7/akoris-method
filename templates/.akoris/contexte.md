@@ -460,4 +460,19 @@ Avant le bootstrap, les 3 onglets sont initialisés manuellement :
 
 ---
 
+## §22 — OUTILS COMPATIBLES
+
+AKORIS est indépendant des outils. Prérequis :
+
+- 3 agents LLM simultanés (onglets A, B, C)
+- Un dossier partagé (`.akoris/`)
+- Un verrou fichier (`state.md`)
+
+**Outil de référence :** OpenCode.
+
+**Alternatives :** Manus, Cursor, Windsurf, Claude Projects, ou tout outil
+permettant 3 sessions LLM simultanées avec accès fichier partagé.
+
+**Non compatible :** chat unique, outil sans accès fichier, outil sans multi-onglets.
+
 *Fin du contexte AKORIS.*

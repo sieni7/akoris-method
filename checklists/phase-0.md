@@ -15,6 +15,15 @@
 
 ---
 
+## Étape 0.0 — Ouvrir l'outil
+
+- [ ] Choisir un outil compatible (OpenCode recommandé, ou alternative)
+- [ ] Ouvrir 3 onglets (A, B, C) dans le même outil
+- [ ] Vérifier que les 3 onglets ont accès au même dossier
+- [ ] Vérifier qu'un mécanisme de verrou fichier est disponible (`.akoris/state.md`)
+
+---
+
 ## Étape 0.1 — Scaffold (terminal)
 
 - [ ] `cd <chemin-parent>`
