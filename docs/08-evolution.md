@@ -28,7 +28,7 @@ La force d'AKORIS réside dans sa capacité à être répliquée à l'identique 
 - **Le script `init-project.sh`** : Ce script est le point d'entrée unique pour initialiser un nouveau projet. En quelques secondes, il :
   1. Crée l'arborescence racine (`app/`, `doc/`, `.akoris/`).
   2. Copie les templates officiels des agents (Orchestrator, Builder, Auditor) depuis le référentiel `akoris-method/` vers `.akoris/config/`.
-  3. Initialise un `contexte.md` vierge mais structuré avec les 22 sections (§0 à §22), prêt à être complété par le Validator.
+  3. Initialise un `contexte.md` vierge mais structuré avec les 23 sections (§0 à §22), prêt à être complété par le Validator.
   4. Configure les hooks Git pour le `commitlint` et le format DCO.
 - **Garantie de conformité** : Aucun projet AKORIS ne doit démarrer "à la main". L'utilisation de `init-project.sh` assure que les garde-fous, la séparation des pouvoirs et la traçabilité sont en place avant même que la première ligne de code ne soit écrite.
 
