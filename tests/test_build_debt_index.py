@@ -21,6 +21,27 @@ def write_debt(path: Path, content: str):
     path.write_text(content, encoding="utf-8")
 
 
+def test_build_debt_index_exit_2_without_yaml():
+    """L'absence de PyYAML produit un message explicite et exit 2."""
+    code = """
+import runpy
+import sys
+from unittest.mock import patch
+
+script = sys.argv[1]
+sys.argv = [script]
+with patch.dict("sys.modules", {"yaml": None}):
+    runpy.run_path(script, run_name="__main__")
+"""
+    result = subprocess.run(
+        [sys.executable, "-c", code, str(SCRIPT)],
+        capture_output=True, text=True,
+    )
+    assert result.returncode == 2
+    assert "ERREUR : PyYAML requis." in result.stderr
+    assert "pip install pyyaml" in result.stderr
+
+
 def test_simple_frontmatter(tmp_path):
     """Cas nominal : un frontmatter simple est parsé."""
     debt_dir = tmp_path / "debt"
