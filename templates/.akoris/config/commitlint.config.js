@@ -1,5 +1,5 @@
 // commitlint — convention Conventional Commits (décision 023)
-// Footer obligatoire : Refs: <ADR-NNNN | DT-NNN | C-NN | Bloc N>
+// Footer obligatoire : Refs: <ADR-NNNN | DT-NNN | C-NN | Bloc N | Landing Page>
 // Trailer DCO obligatoire : Signed-off-by: <Nom> <email>
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
       2,
       'always',
       [
-        'auth', 'api', 'ui', 'db', 'ci', 'doc', 'akoris', 'state', 'debt',
+        'auth', 'api', 'ui', 'site', 'db', 'ci', 'doc', 'akoris', 'state', 'debt',
         'context', 'audit', 'checklist', 'license', 'readme', 'changelog',
         'decisions', 'scripts', 'bootstrap', 'contributing', 'method',
       ],
