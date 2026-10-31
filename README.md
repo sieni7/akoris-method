@@ -6,8 +6,8 @@
 
 [🇫🇷 Français](README.md) · [🇬🇧 English](README.en.md)
 
-[![Version](https://img.shields.io/badge/version-0.1.1-blue)]()
-[![Tests](https://img.shields.io/badge/tests-17%20passing-brightgreen)]()
+[![Version](https://img.shields.io/badge/version-0.1.2-blue)]()
+[![Tests](https://img.shields.io/badge/tests-24%20passing-brightgreen)]()
 [![Licence](https://img.shields.io/badge/licence-MIT%20%2B%20Apache--2.0%20%2B%20CC--BY--4.0-lightgrey)]()
 
 ---
@@ -171,7 +171,7 @@ akoris-method/
 ├── decisions/             ← 49 décisions figées (001-048, 050) + 1 clarification (049)
 ├── checklists/            ← phase 0, bootstrap, sprint, verdict, clôture
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — disponible
-├── tests/                 ← 21 tests Python sur 4 fichiers
+├── tests/                 ← 24 tests Python sur 4 fichiers
 ├── templates/doc/         ← documentation de projet à copier
 ├── templates/.akoris/     ← templates à copier
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
@@ -181,15 +181,19 @@ akoris-method/
 
 ## Documentation
 
-Le livre est complet avec 9 chapitres disponibles (ch.0–8).
+Le livre compte actuellement 10 chapitres disponibles (ch.0 à ch.9).
 
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre complet (9 chapitres disponibles, ch.0–8), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
+| [`docs/`](docs/) | Le livre (10 chapitres disponibles, ch.0 à ch.9), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
-| [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (22 sections) |
+| [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |
+| [`QA-01 Code Reviewer`](templates/skills/QA-01-Code-Reviewer/SKILL.md) | Pilote de compétence de revue de code |
+
+
+AKORIS introduit le concept de Skills Packs : des compétences métier activables par le SPA. Le pilote QA-01 est disponible.
 
 ---
 
@@ -200,7 +204,7 @@ Les contributions sont les bienvenues. Avant de proposer une PR :
 1. Lire [`METHOD.md`](METHOD.md) et les [`decisions/`](decisions/).
 2. Vérifier que la modification respecte les 49 décisions figées (001-048, 050) + 1 clarification (049)
    (ou proposer un ADR pour une nouvelle décision).
-3. Lancer `pytest` (21 tests Python sur 4 fichiers).
+3. Lancer `pytest` (24 tests Python sur 4 fichiers).
 4. Lancer `shellcheck scripts/*.sh` (0 alerte attendue).
 5. Ouvrir une **issue** avant une PR majeure.
 

@@ -20,6 +20,8 @@ Pour réduire la friction d'adoption, l'outillage AKORIS évolue selon une roadm
 - **V1 (CLI Interactif)** : Introduction d'un CLI dédié pour gérer le verrouillage de `state.md`, échafauder (scaffold) automatiquement les squelettes de tâches, d'ADR et de dettes, et valider les commits localement avant le push.
 - **V2 (Orchestration Native)** : Intégration complète avec les métriques de performance (rapport R3, nécessitant `metrics.md`) et orchestration multi-agents native, réduisant encore la charge cognitive du Validator.
 
+Le script validate-method.py effectue une validation structurelle (présence des fichiers, liens, sections). Il ne remplace pas l'Auditor pour la validation sémantique de la synchronisation documentaire.
+
 ## 3. Réplicabilité de la Méthode
 La force d'AKORIS réside dans sa capacité à être répliquée à l'identique sur n'importe quel nouveau projet, garantissant une qualité constante dès le premier jour.
 
@@ -29,3 +31,10 @@ La force d'AKORIS réside dans sa capacité à être répliquée à l'identique 
   3. Initialise un `contexte.md` vierge mais structuré avec les 22 sections (§0 à §22), prêt à être complété par le Validator.
   4. Configure les hooks Git pour le `commitlint` et le format DCO.
 - **Garantie de conformité** : Aucun projet AKORIS ne doit démarrer "à la main". L'utilisation de `init-project.sh` assure que les garde-fous, la séparation des pouvoirs et la traçabilité sont en place avant même que la première ligne de code ne soit écrite.
+
+## 4. Mode Équipe (V2)
+Dans sa version actuelle (V1), AKORIS fonctionne avec un seul Validator humain. La décision 048 (V2) prévoit un mode équipe où un second humain (Reviewer) peut approuver les changements. Ce mode n'est pas encore implémenté dans les templates.
+
+
+## 5. Les Skills Packs (V1.5)
+Une compétence (Skill) est un savoir-faire métier (ex: QA-01 Code Reviewer). Un rôle (Builder, Auditor) active cette compétence via une instance SPA. Cette séparation garantit que le code n'est jamais mélangé avec la gouvernance.

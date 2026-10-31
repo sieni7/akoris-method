@@ -83,3 +83,5 @@ Tapez `1`, `2` ou `3` pour choisir.
 | **`dashboard`** | Redondant avec `govern status`. Le CLI reste dans le terminal. |
 | **`registry`** | Collision avec le vocabulaire AKORIS (ADR, Dettes). |
 | **`doctor --fix`** | Violation du principe "L'autorité humaine décide". Le CLI propose, ne corrige pas. |
+
+Note : Le terme "Registry" désigne l'index interne des onglets (cf. décision 041). La commande CLI registry a été écartée car elle prêtait à confusion avec le registre des dettes.

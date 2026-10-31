@@ -61,4 +61,9 @@
 | **DCO** | Developer Certificate of Origin. La signature (`Signed-off-by`) obligatoire. |
 | **SemVer** | Le versionnage sémantique (`vMAJOR.MINOR.PATCH`). |
 
+## 7. Skills Packs (Compétences)
+
+- **Compétence (Skill)** : Savoir-faire métier (ex: QA-01 Code Reviewer) stocké dans `templates/skills/`. N'a pas de rôle de gouvernance.
+- **Activation** : Instance SPA qui mobilise une compétence dans un rôle spécifique (ex: Auditor) pour une mission donnée. Stockée dans `.akoris/activations/`.
+
 ---

@@ -98,12 +98,13 @@ permettant 3 sessions LLM simultanées avec accès fichier partagé.
 
 ## 7. Pour aller plus loin
 
-- **Le livre :** `docs/` (3 chapitres disponibles, ch.0–2)
-- **Les décisions :** `decisions/` (49 décisions figées (001-048, 050) + 1 clarification (049))
+- **Le livre :** `docs/` (10 chapitres disponibles, ch.0 à ch.9)
+- **Les décisions :** `decisions/` (référentiel des décisions et clarifications)
 - **Les templates :** `templates/` (à copier dans un projet)
 - **Les checklists :** `checklists/` (phase 0, bootstrap, sprint, verdict, clôture)
-- **Les scripts :** `scripts/` (init-project, validate-method) ; `.akoris/scripts/` (build-debt-index)
+- **Les scripts :** `scripts/` (init-project, validate-method) ; `templates/.akoris/scripts/` (build-debt-index)
 - **Les exemples :** `examples/` (instances SPA et cas d’usage concrets, à venir)
+- **Les compétences :** `templates/skills/` (Pilote QA-01 disponible)
 
 ---
 

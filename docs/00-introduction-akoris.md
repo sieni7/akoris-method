@@ -117,7 +117,7 @@ AKORIS **est** :
 
 ## 0.5 Comment lire ce livre
 
-Le livre est organisé en **9 parties** (0 à VIII) et **34 chapitres**.
+Ce livre est en cours de rédaction. Les chapitres 0 à 9 sont actuellement disponibles.
 
 ### Trois parcours possibles
 
