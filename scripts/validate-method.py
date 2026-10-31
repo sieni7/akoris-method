@@ -13,6 +13,8 @@ CRITICAL_FILES = [
     "README.md", "README.en.md", "METHOD.md", "CHANGELOG.md",
     "CONTACT.md", "LICENSE", ".github/workflows/ci.yml",
     "docs/00-introduction-akoris.md", "scripts/init-project.sh",
+    "docs/09-spa-standard.md", "templates/spa/SPA-TEMPLATE.md",
+    "tools/context_generator.md",
     "templates/.akoris/contexte.md", "templates/.akoris/state.md",
     "templates/.akoris/projet.md", "templates/.akoris/config/bootstrap.md",
     "templates/.akoris/config/agents/orchestrator.md",
@@ -40,6 +42,29 @@ FOUNDING_ADRS = [
 
 DECISION_SECTIONS = ["Décision", "Règles", "Justification", "Alternatives"]
 CONTEXTE_SECTIONS = [f"§{i}" for i in range(23)]
+SPA_RUBRICS = [
+    "0. Contrat d'exécution",
+    "1. Identité et rôle",
+    "2. Contexte",
+    "3. Objectifs et résultats attendus",
+    "4. Périmètre et exclusions",
+    "5. Entrées et sources de vérité",
+    "6. Processus et phases",
+    "7. Règles de décision et escalade",
+    "8. Outils et environnement d'exécution",
+    "9. Livrables et format de sortie",
+    "10. Qualité et critères d'acceptation",
+    "11. Contraintes, risques et sécurité",
+    "12. Communication et fin de mission",
+]
+SPA_DOCUMENTS = [
+    "docs/09-spa-standard.md",
+    "templates/spa/SPA-TEMPLATE.md",
+    "tools/context_generator.md",
+    "templates/.akoris/config/agents/orchestrator.md",
+    "templates/.akoris/config/agents/builder.md",
+    "templates/.akoris/config/agents/auditor.md",
+]
 LINK_REGEX = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 ABSOLUTE_PATH_REGEX = re.compile(r"(?<![\w])/(?:home|tmp|Users|var|etc|opt|root)/")
 
@@ -117,6 +142,22 @@ def check_critical_files(repo, r):
         r.ok(f"{len(CRITICAL_FILES)} fichiers critiques présents")
 
 
+def check_spa_structure(repo, r):
+    for relative_path in SPA_DOCUMENTS:
+        path = repo / relative_path
+        if not path.exists():
+            r.error(f"Document SPA manquant : {relative_path}")
+            continue
+        content = path.read_text(encoding="utf-8")
+        headings = re.findall(r"^#{2,3} (\d{1,2}\. .+)$", content, re.M)
+        if headings != SPA_RUBRICS:
+            r.error(f"{relative_path} : rubriques SPA absentes, réordonnées ou renommées")
+        if relative_path == "templates/spa/SPA-TEMPLATE.md":
+            if content.count("[À renseigner]") < len(SPA_RUBRICS):
+                r.error("SPA-TEMPLATE.md : un ou plusieurs champs [À renseigner] manquent")
+    r.ok("Standard, template, instance et agents respectent les 13 rubriques SPA")
+
+
 def check_founding_adrs(repo, r):
     missing = [f for f in FOUNDING_ADRS if not (repo / f).exists()]
     if missing:
@@ -191,6 +232,7 @@ def main():
     check_decisions(repo, r)
     check_contexte(repo, r)
     check_critical_files(repo, r)
+    check_spa_structure(repo, r)
     check_founding_adrs(repo, r)
     check_links(repo, r)
     check_absolute_paths(repo, r)
