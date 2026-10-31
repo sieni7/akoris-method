@@ -27,7 +27,7 @@
 - [ ] Vérifier : `app/`, `doc/`, `.akoris/` avec sous-dossiers
 - [ ] Taper `go` dans A
 
-## Phase 3 — Contexte (§0 + §1-§21)
+## Phase 3 — Contexte (§0 à §22 (23 sections))
 
 - [ ] L'Orchestrator vérifie/complète `.akoris/projet.md`
 - [ ] Vérifier : §0 AKORIS (contexte) + §1 identité projet et §4 conventions (projet.md)

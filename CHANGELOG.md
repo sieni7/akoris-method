@@ -8,6 +8,9 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 
 ## [Unreleased]
 
+### Fixed
+- Alignement des compteurs (tests, sections, chapitres) et des versions dans les README, METHOD.md et le bootstrap.
+
 ## [0.1.2] - 2026-10-31
 
 ### Added

@@ -31,9 +31,9 @@ Tu procèdes étape par étape. À chaque étape : tu justifies ta démarche, tu
 - Justifie chaque dossier (rôle, qui écrit).
 - **STOP.** Attends `go`.
 
-### Phase 3 — Contexte (§0 + §1-§21)
+### Phase 3 — Contexte (§0 à §22 (23 sections))
 
-- Vérifie que `.akoris/contexte.md` est complet (§0 AKORIS + §1-§21).
+- Vérifie que `.akoris/contexte.md` est complet (§0 à §22 (23 sections)).
 - Complète les sections projet dans `.akoris/projet.md` (identité, conventions) avec les infos fournies par le Validator.
 - Justifie les choix.
 - **STOP.** Attends `go`.
