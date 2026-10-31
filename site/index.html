@@ -30,10 +30,10 @@
       body {
         background-color: var(--ink);
         background-image:
-          radial-gradient(ellipse at 12% 8%, rgba(34, 197, 94, 0.12), transparent 32rem),
+          radial-gradient(ellipse at 12% 8%, rgba(34, 197, 94, 0.06), transparent 32rem),
           linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-        background-size: auto, 36px 36px, 36px 36px;
+        background-size: auto, 60px 60px, 60px 60px;
         color: #ecf2e9;
       }
 
@@ -42,8 +42,8 @@
         color: #f0fdf4;
       }
 
-      a:focus-visible {
-        outline: 2px solid var(--green);
+      a:focus-visible, button:focus-visible {
+        outline: 2px solid #4ade80;
         outline-offset: 4px;
       }
 
@@ -89,7 +89,7 @@
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8"
       >
         <a class="font-mono text-lg font-bold tracking-[0.22em] text-white" href="#accueil">AKORIS<span class="text-green-400">_</span></a>
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-wider text-gray-400">
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-wider text-gray-300">
           <a class="transition hover:text-green-300" href="#methode">Méthode</a>
           <a class="transition hover:text-green-300" href="#structure">Structure</a>
           <a class="transition hover:text-green-300" href="#spa">SPA</a>
@@ -112,22 +112,28 @@
           <h1 class="font-mono text-5xl font-bold tracking-tight text-white sm:text-7xl">AKORIS</h1>
           <div class="mt-6 max-w-2xl font-mono text-xl leading-relaxed text-gray-100 sm:text-2xl space-y-3">
             <div class="flex items-center gap-4">
-              <i aria-hidden="true" class="fa-solid fa-microchip text-gray-400 text-xl w-6 text-center"></i>
+              <div class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-500/50 bg-white/5 text-gray-400 shrink-0">
+                <i aria-hidden="true" class="fa-solid fa-microchip text-xl"></i>
+              </div>
               <span>L’IA produit.</span>
             </div>
             <div class="flex items-center gap-4">
-              <i aria-hidden="true" class="fa-solid fa-magnifying-glass text-gray-400 text-xl w-6 text-center"></i>
+              <div class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-500/50 bg-white/5 text-gray-400 shrink-0">
+                <i aria-hidden="true" class="fa-solid fa-magnifying-glass text-xl"></i>
+              </div>
               <span>Le contrôle vérifie.</span>
             </div>
             <div class="flex items-center gap-4">
-              <i aria-hidden="true" class="fa-solid fa-gavel text-green-400 text-xl w-6 text-center"></i>
+              <div class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-green-500/50 bg-green-500/10 text-green-400 shadow-[0_0_15px_rgba(74,222,128,0.2)] shrink-0">
+                <i aria-hidden="true" class="fa-solid fa-gavel text-xl"></i>
+              </div>
               <span class="text-green-300 font-bold">L’autorité humaine décide.</span>
             </div>
           </div>
-          <p class="mt-6 max-w-xl text-base leading-7 text-gray-400 sm:text-lg">
+          <p class="mt-6 max-w-xl text-base leading-7 text-gray-300 sm:text-lg">
             Une méthode de gouvernance pour le développement logiciel assisté par IA. Indépendante des modèles et des outils.
           </p>
-          <p class="mt-5 max-w-xl border-l-2 border-green-400/70 pl-4 text-sm leading-6 text-gray-400">
+          <p class="mt-5 max-w-xl border-l-2 border-green-400/70 pl-4 text-sm leading-6 text-gray-300">
             Le tag <span class="font-mono text-green-300">v0.1.2</span> désigne la version publiée; la branche <span class="font-mono text-gray-200">main</span> poursuit son développement.
           </p>
           <div class="mt-9 flex flex-wrap gap-3">
@@ -184,10 +190,14 @@ Signed-off-by: Oulai Sieni Tarek
               <p class="font-mono text-xs leading-5 text-gray-500">Chaque changement est attribué, signé et traçable.</p>
             </article>
           </div>
-          <div class="flex justify-center gap-2 border-t border-white/10 px-5 py-4" role="tablist" aria-label="Slides de preuve">
-            <button class="h-2.5 w-2.5 rounded-full bg-green-400 transition" type="button" data-hero-dot aria-label="Afficher la slide 1" aria-selected="true"></button>
-            <button class="h-2.5 w-2.5 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 2" aria-selected="false"></button>
-            <button class="h-2.5 w-2.5 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 3" aria-selected="false"></button>
+          <div class="flex items-center justify-center gap-4 border-t border-white/10 px-5 py-4">
+            <button class="rounded px-2 py-1 font-mono text-lg text-gray-300 transition hover:text-green-300" type="button" data-hero-prev aria-label="Afficher la slide précédente">&lt;</button>
+            <div class="flex items-center justify-center gap-3" role="tablist" aria-label="Slides de preuve">
+              <button class="h-3 w-3 rounded-full bg-green-400 transition" type="button" data-hero-dot aria-label="Afficher la slide 1" aria-selected="true"></button>
+              <button class="h-3 w-3 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 2" aria-selected="false"></button>
+              <button class="h-3 w-3 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 3" aria-selected="false"></button>
+            </div>
+            <button class="rounded px-2 py-1 font-mono text-lg text-gray-300 transition hover:text-green-300" type="button" data-hero-next aria-label="Afficher la slide suivante">&gt;</button>
           </div>
         </div>
       </section>
@@ -211,25 +221,28 @@ Signed-off-by: Oulai Sieni Tarek
           <div class="mb-10 max-w-3xl">
             <p class="font-mono text-xs uppercase tracking-[0.22em] text-green-300">01 / Intention</p>
             <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Les 3 Boussoles</h2>
-            <p class="mt-4 text-base leading-7 text-gray-400">
+            <p class="mt-4 text-base leading-7 text-gray-300">
               Ces trois objectifs sont des boussoles, pas des garanties. AKORIS mesure l’écart et trace les compromis.
             </p>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
-            <article class="panel rounded-xl p-6">
-              <p class="font-mono text-xs text-green-300">BOUSSOLE 01</p>
-              <h3 class="mt-4 font-mono text-xl font-semibold text-white">Zéro Hallucination</h3>
-              <p class="mt-3 text-sm leading-6 text-gray-400">Les affirmations sont vérifiées ou signalées comme hypothèses; les preuves sont tracées.</p>
+            <article class="panel relative overflow-hidden rounded-xl p-6">
+              <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">01</span>
+              <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 01</p>
+              <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-brain text-green-300"></i>Zéro Hallucination</h3>
+              <p class="relative z-10 mt-3 text-sm leading-6 text-gray-300">Les affirmations sont vérifiées ou signalées comme hypothèses; les preuves sont tracées.</p>
             </article>
-            <article class="panel rounded-xl p-6">
-              <p class="font-mono text-xs text-green-300">BOUSSOLE 02</p>
-              <h3 class="mt-4 font-mono text-xl font-semibold text-white">Zéro Code Spaghetti</h3>
-              <p class="mt-3 text-sm leading-6 text-gray-400">Architecture stricte et séparation des piliers.</p>
+            <article class="panel relative overflow-hidden rounded-xl p-6">
+              <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">02</span>
+              <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 02</p>
+              <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-cubes text-green-300"></i>Zéro Code Spaghetti</h3>
+              <p class="relative z-10 mt-3 text-sm leading-6 text-gray-300">Architecture stricte et séparation des piliers.</p>
             </article>
-            <article class="panel rounded-xl p-6">
-              <p class="font-mono text-xs text-green-300">BOUSSOLE 03</p>
-              <h3 class="mt-4 font-mono text-xl font-semibold text-white">Zéro Dette Non Maîtrisée</h3>
-              <p class="mt-3 text-sm leading-6 text-gray-400">Les compromis sont tracés dans un registre et mesurés.</p>
+            <article class="panel relative overflow-hidden rounded-xl p-6">
+              <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">03</span>
+              <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 03</p>
+              <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-scale-balanced text-green-300"></i>Zéro Dette Non Maîtrisée</h3>
+              <p class="relative z-10 mt-3 text-sm leading-6 text-gray-300">Les compromis sont tracés dans un registre et mesurés.</p>
             </article>
             <div class="col-span-full mt-6">
               <h3 class="font-mono text-lg font-semibold text-white">Verdicts du Validator</h3>
@@ -237,7 +250,7 @@ Signed-off-by: Oulai Sieni Tarek
                 <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
                   <div class="flex flex-col text-left">
                     <p class="font-mono text-sm font-bold text-green-300">go</p>
-                    <p class="mt-1 text-sm text-gray-400">Validé</p>
+                    <p class="mt-1 text-sm text-gray-300">Validé</p>
                   </div>
                   <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
                     <span class="w-3 h-3 rounded-full bg-red-500/20"></span>
@@ -248,7 +261,7 @@ Signed-off-by: Oulai Sieni Tarek
                 <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
                   <div class="flex flex-col text-left">
                     <p class="font-mono text-sm font-bold text-yellow-200">go with reserve</p>
-                    <p class="mt-1 text-sm text-gray-400">Validé avec dette</p>
+                    <p class="mt-1 text-sm text-gray-300">Validé avec dette</p>
                   </div>
                   <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
                     <span class="w-3 h-3 rounded-full bg-red-500/20"></span>
@@ -259,7 +272,7 @@ Signed-off-by: Oulai Sieni Tarek
                 <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
                   <div class="flex flex-col text-left">
                     <p class="font-mono text-sm font-bold text-red-300">no-go</p>
-                    <p class="mt-1 text-sm text-gray-400">Refusé</p>
+                    <p class="mt-1 text-sm text-gray-300">Refusé</p>
                   </div>
                   <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
                     <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_#ef4444]"></span>
@@ -278,12 +291,12 @@ Signed-off-by: Oulai Sieni Tarek
           <div>
             <p class="font-mono text-xs uppercase tracking-[0.22em] text-green-300">02 / Responsabilités</p>
             <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Structure &amp; Rôles</h2>
-            <p class="mt-4 text-base leading-7 text-gray-400">Un projet AKORIS repose sur une séparation stricte des responsabilités.</p>
-            <ul class="mt-7 space-y-4 text-sm leading-6 text-gray-400">
+            <p class="mt-4 text-base leading-7 text-gray-300">Un projet AKORIS repose sur une séparation stricte des responsabilités.</p>
+            <ul class="mt-7 space-y-4 text-sm leading-6 text-gray-300">
               <li><span class="font-mono font-semibold text-white">Orchestrator</span><br />Planifie, découpe et coordonne.</li>
               <li><span class="font-mono font-semibold text-white">Builder</span><br />Exécute, code et commit dans le périmètre autorisé.</li>
               <li><span class="font-mono font-semibold text-white">Auditor</span><br />Contrôle, teste et rapporte.</li>
-              <li><span class="font-mono font-semibold text-white">Validator</span><br />Autorise, tranche et décide.</li>
+              <li class="border-l-4 border-green-400 pl-4"><span class="font-mono font-semibold text-white">Validator</span> <span class="rounded bg-green-400/10 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-green-300">HUMAIN</span><br />Autorise, tranche et décide.</li>
             </ul>
           </div>
           <div class="panel overflow-hidden rounded-xl">
@@ -311,7 +324,7 @@ Signed-off-by: Oulai Sieni Tarek
           <div>
             <p class="font-mono text-xs uppercase tracking-[0.22em] text-green-300">03 / Standardisation</p>
             <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Le SPA</h2>
-            <p class="mt-4 text-base leading-7 text-gray-400">Le Standard de Prompt AKORIS formalise les prompts via un standard strict de 13 rubriques.</p>
+            <p class="mt-4 text-base leading-7 text-gray-300">Le Standard de Prompt AKORIS formalise les prompts via un standard strict de 13 rubriques.</p>
           </div>
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">spa / 13 rubriques</div>
@@ -342,25 +355,25 @@ Signed-off-by: Oulai Sieni Tarek
         <div class="mb-10 max-w-3xl">
           <p class="font-mono text-xs uppercase tracking-[0.22em] text-green-300">04 / Vérifiabilité</p>
           <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Preuves &amp; Transparence</h2>
-          <p class="mt-4 text-base leading-7 text-gray-400">Parce qu’une méthode de gouvernance doit être vérifiable, voici l’état réel du dépôt.</p>
+          <p class="mt-4 text-base leading-7 text-gray-300">Parce qu’une méthode de gouvernance doit être vérifiable, voici l’état réel du dépôt.</p>
         </div>
         <div class="grid gap-6 md:grid-cols-3">
           <article class="panel rounded-xl p-8 flex flex-col gap-6 h-full">
             <div class="text-center">
               <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="49">49</span> + <span class="count-up font-mono text-5xl font-bold text-white" data-target="1">1</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Décisions &amp; Clarification</h3>
-              <p class="mt-2 text-sm leading-6 text-gray-400">Au moment de la publication de la v0.1.2.</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">Au moment de la publication de la v0.1.2.</p>
             </div>
             <div class="bg-black/20 rounded p-4 font-mono text-sm leading-6">
               <p class="text-green-300">ADR-001 à ADR-050</p>
-              <p class="text-gray-400">Clarification 049</p>
+              <p class="text-gray-300">Clarification 049</p>
             </div>
           </article>
           <article class="panel rounded-xl p-8 flex flex-col gap-6 h-full">
             <div class="text-center">
               <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="24">24</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Tests Automatisés</h3>
-              <p class="mt-2 text-sm leading-6 text-gray-400">CI verte sur le commit actuel.</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">CI verte sur le commit actuel.</p>
             </div>
             <div class="mt-auto">
               <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4" role="progressbar" aria-label="Tests automatisés réussis" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="bg-green-400 h-2.5 rounded-full w-full"></div></div>
@@ -371,7 +384,7 @@ Signed-off-by: Oulai Sieni Tarek
             <div class="text-center">
               <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="8">8</span>/<span class="count-up font-mono text-5xl font-bold text-white" data-target="8">8</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Contrôles de Cohérence</h3>
-              <p class="mt-2 font-mono text-sm text-gray-400">validate-method.py --strict</p>
+              <p class="mt-2 font-mono text-sm text-gray-300">validate-method.py --strict</p>
             </div>
             <div class="grid grid-cols-2 gap-2 rounded bg-black/20 p-4 font-mono text-xs leading-6 text-gray-300">
               <span>01. Décisions</span>
@@ -386,7 +399,7 @@ Signed-off-by: Oulai Sieni Tarek
           </article>
         </div>
         <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-black/20 p-4 rounded-lg border border-white/5">
-          <p class="text-sm text-gray-400">Le code source complet est actuellement en dépôt privé.</p>
+          <p class="text-sm text-gray-300">Le code source complet est actuellement en dépôt privé.</p>
           <a href="mailto:sieni7@gmail.com?subject=Demande%20d'accès%20au%20dépôt%20AKORIS" class="whitespace-nowrap rounded bg-green-500/10 border border-green-500/30 px-4 py-2 text-sm font-mono text-green-300 hover:bg-green-500/20 transition">
             Demander l'accès
           </a>
@@ -400,27 +413,27 @@ Signed-off-by: Oulai Sieni Tarek
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">A</span> <span class="font-mono text-lg font-bold text-white">Adaptive</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">La méthode s'adapte à la taille du projet et à la nature du sprint.</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">La méthode s'adapte à la taille du projet et à la nature du sprint.</p>
             </div>
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">K</span> <span class="font-mono text-lg font-bold text-white">Knowledge</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">La méthode capitalise la connaissance (ADR, dettes, contexte).</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">La méthode capitalise la connaissance (ADR, dettes, contexte).</p>
             </div>
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">O</span> <span class="font-mono text-lg font-bold text-white">Orchestrated</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">Les agents sont coordonnés (pas d'improvisation, un verrou).</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">Les agents sont coordonnés (pas d'improvisation, un verrou).</p>
             </div>
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">R</span> <span class="font-mono text-lg font-bold text-white">Review</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">Le contrôle est systématique (Auditor QA et SecOps).</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">Le contrôle est systématique (Auditor QA et SecOps).</p>
             </div>
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">I</span> <span class="font-mono text-lg font-bold text-white">Iterative</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">Le développement avance par itérations courtes (sprints).</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">Le développement avance par itérations courtes (sprints).</p>
             </div>
             <div class="panel rounded-xl p-5">
               <p><span class="font-mono text-3xl font-bold text-green-400">S</span> <span class="font-mono text-lg font-bold text-white">Systems</span></p>
-              <p class="mt-2 text-sm leading-6 text-gray-400">Le produit final est un système complet (code, doc, gouvernance).</p>
+              <p class="mt-2 text-sm leading-6 text-gray-300">Le produit final est un système complet (code, doc, gouvernance).</p>
             </div>
           </div>
           <div class="mt-8 grid gap-5 md:grid-cols-2">
@@ -434,7 +447,7 @@ Signed-off-by: Oulai Sieni Tarek
             </div>
             <div class="panel rounded-xl p-6">
               <h3 class="font-mono text-lg font-semibold text-gray-200">AKORIS n’est pas</h3>
-              <ul class="mt-4 space-y-2 text-sm leading-6 text-gray-400">
+              <ul class="mt-4 space-y-2 text-sm leading-6 text-gray-300">
                 <li>Un modèle d’intelligence artificielle.</li>
                 <li>Un framework de programmation.</li>
                 <li>Un éditeur de code.</li>
@@ -448,8 +461,8 @@ Signed-off-by: Oulai Sieni Tarek
 
     <footer class="border-t border-white/10 bg-black/20">
       <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <p class="max-w-xl text-sm leading-6 text-gray-500">AKORIS — Gouvernance du développement logiciel assisté par IA.<br /><span class="text-gray-400">Créé par Oulai Sieni Tarek.</span></p>
-        <nav aria-label="Liens de pied de page" class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-gray-400">
+        <p class="max-w-xl text-sm leading-6 text-gray-300">AKORIS — Gouvernance du développement logiciel assisté par IA.<br /><span class="text-gray-300">Créé par Oulai Sieni Tarek.</span></p>
+        <nav aria-label="Liens de pied de page" class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-gray-300">
           <a class="hover:text-green-300" href="#methode">Méthode</a>
           <a class="hover:text-green-300" href="#preuves">Preuves</a>
           <a class="hover:text-green-300" href="mailto:sieni7@gmail.com">Contact</a>
@@ -463,8 +476,11 @@ Signed-off-by: Oulai Sieni Tarek
         if (hero) {
           const slides = [...hero.querySelectorAll('[data-hero-slide]')];
           const dots = [...hero.querySelectorAll('[data-hero-dot]')];
+          const previous = hero.querySelector('[data-hero-prev]');
+          const next = hero.querySelector('[data-hero-next]');
           let active = 0;
           let timer;
+          let isHovered = false;
 
           const showHeroSlide = (index) => {
             active = (index + slides.length) % slides.length;
@@ -485,13 +501,29 @@ Signed-off-by: Oulai Sieni Tarek
 
           const restartHeroTimer = () => {
             window.clearInterval(timer);
-            timer = window.setInterval(() => showHeroSlide(active + 1), 5000);
+            if (!isHovered) timer = window.setInterval(() => showHeroSlide(active + 1), 5000);
           };
 
           dots.forEach((dot, i) => dot.addEventListener('click', () => {
-            window.clearInterval(timer);
             showHeroSlide(i);
+            restartHeroTimer();
           }));
+          previous?.addEventListener('click', () => {
+            showHeroSlide(active - 1);
+            restartHeroTimer();
+          });
+          next?.addEventListener('click', () => {
+            showHeroSlide(active + 1);
+            restartHeroTimer();
+          });
+          hero.addEventListener('mouseenter', () => {
+            isHovered = true;
+            window.clearInterval(timer);
+          });
+          hero.addEventListener('mouseleave', () => {
+            isHovered = false;
+            restartHeroTimer();
+          });
           restartHeroTimer();
         }
 
