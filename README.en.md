@@ -6,7 +6,7 @@
 
 [🇫🇷 Français](README.md) · [🇬🇧 English](README.en.md)
 
-[![Version](https://img.shields.io/badge/version-0.1.2-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![Tests](https://img.shields.io/badge/tests-24%20passing-brightgreen)]()
 [![License](https://img.shields.io/badge/license-MIT%20%2B%20Apache--2.0%20%2B%20CC--BY--4.0-lightgrey)]()
 
