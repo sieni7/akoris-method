@@ -14,6 +14,13 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 ### Fixed
 - Alignement des compteurs (tests, sections, chapitres) et des versions dans les README, METHOD.md et le bootstrap.
 
+## [0.1.3] - 2026-10-31
+
+### Fixed
+- Alignement du compteur de chapitres (12 chapitres, ch.0 à ch.11).
+- Correction du compteur de sections dans docs/08-evolution.md (23 sections).
+- Ajout de templates/skills/ dans l'arbre de structure des README.
+
 ## [0.1.2] - 2026-10-31
 
 ### Added

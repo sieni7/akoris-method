@@ -6,7 +6,7 @@
 
 [🇫🇷 Français](README.md) · [🇬🇧 English](README.en.md)
 
-[![Version](https://img.shields.io/badge/version-0.1.2-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![Tests](https://img.shields.io/badge/tests-24%20passing-brightgreen)]()
 [![Licence](https://img.shields.io/badge/licence-MIT%20%2B%20Apache--2.0%20%2B%20CC--BY--4.0-lightgrey)]()
 
@@ -173,6 +173,7 @@ akoris-method/
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — disponible
 ├── tests/                 ← 24 tests Python sur 4 fichiers
 ├── templates/doc/         ← documentation de projet à copier
+├── templates/skills/      ← Skills Packs (pilote QA-01 disponible)
 ├── templates/.akoris/     ← templates à copier
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
 ```
@@ -181,12 +182,12 @@ akoris-method/
 
 ## Documentation
 
-Le livre compte actuellement 10 chapitres disponibles (ch.0 à ch.9).
+Le livre compte actuellement 12 chapitres disponibles (ch.0 à ch.11).
 
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre (10 chapitres disponibles, ch.0 à ch.9), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
+| [`docs/`](docs/) | Le livre (12 chapitres disponibles, ch.0 à ch.11), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |
