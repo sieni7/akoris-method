@@ -32,7 +32,7 @@ Sprint & Tâche : Permettent de tracer exactement quelle tâche du current_sprin
 
 Refs : Lie le commit aux décisions d'architecture (ADR) ou aux dettes techniques (DT) concernées.
 
-DCO (Developer Certificate of Origin) : Le trailer Signed-off-by: est obligatoire. Il certifie que le Builder a le droit de soumettre ce code et qu'il en assume la paternité, garantissant l'intégrité juridique du dépôt.
+DCO (Developer Certificate of Origin) : Le trailer `Signed-off-by:` est obligatoire. Il certifie que le contributeur a le droit de soumettre cette contribution sous la licence applicable du projet (voir décision 051).
 
 ## 3. Gestion des Branches et Flux de Push
 Le modèle de branchement est volontairement simple pour éviter la complexité inutile :
