@@ -292,7 +292,7 @@ Signed-off-by: Oulai Sieni Tarek
         <div class="grid gap-6 md:grid-cols-3">
           <article class="panel rounded-xl p-8 flex flex-col gap-6 h-full">
             <div class="text-center">
-              <p class="font-mono text-5xl font-bold text-white">49 + 1</p>
+              <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="49">0</span> + <span class="count-up font-mono text-5xl font-bold text-white" data-target="1">0</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Décisions &amp; Clarification</h3>
               <p class="mt-2 text-sm leading-6 text-gray-400">Au moment de la publication de la v0.1.2.</p>
             </div>
@@ -303,7 +303,7 @@ Signed-off-by: Oulai Sieni Tarek
           </article>
           <article class="panel rounded-xl p-8 flex flex-col gap-6 h-full">
             <div class="text-center">
-              <p class="font-mono text-5xl font-bold text-white">24</p>
+              <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="24">0</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Tests Automatisés</h3>
               <p class="mt-2 text-sm leading-6 text-gray-400">CI verte sur le commit actuel.</p>
             </div>
@@ -314,7 +314,7 @@ Signed-off-by: Oulai Sieni Tarek
           </article>
           <article class="panel rounded-xl p-8 flex flex-col gap-6 h-full">
             <div class="text-center">
-              <p class="font-mono text-5xl font-bold text-white">8/8</p>
+              <p class="font-mono text-5xl font-bold text-white"><span class="count-up font-mono text-5xl font-bold text-white" data-target="8">0</span>/<span class="count-up font-mono text-5xl font-bold text-white" data-target="8">0</span></p>
               <h3 class="mt-3 font-mono text-lg font-semibold text-green-300">Contrôles de Cohérence</h3>
               <p class="mt-2 font-mono text-sm text-gray-400">validate-method.py --strict</p>
             </div>
@@ -406,6 +406,42 @@ Signed-off-by: Oulai Sieni Tarek
             showHeroSlide(i);
           }));
           restartHeroTimer();
+        }
+
+        function animateValue(obj, start, end, duration) {
+          const startTime = performance.now();
+
+          const update = (currentTime) => {
+            const progress = Math.max(0, Math.min((currentTime - startTime) / duration, 1));
+            const value = Math.floor(start + (end - start) * progress);
+            obj.textContent = value;
+
+            if (progress < 1) {
+              window.requestAnimationFrame(update);
+            } else {
+              obj.textContent = end;
+            }
+          };
+
+          window.requestAnimationFrame(update);
+        }
+
+        const proofs = document.querySelector('#preuves');
+        const countUps = [...document.querySelectorAll('#preuves .count-up')];
+        if (proofs && countUps.length && 'IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              observer.unobserve(proofs);
+              countUps.forEach((countUp) => {
+                const target = Number(countUp.dataset.target);
+                animateValue(countUp, 0, target, 1500);
+              });
+            });
+          }, { threshold: 0.5 });
+
+          observer.observe(proofs);
         }
 
       })();
