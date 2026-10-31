@@ -170,6 +170,7 @@ akoris-method/
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — available
 ├── tests/                 ← 24 Python tests across 4 files
 ├── templates/doc/         ← project documentation templates to copy
+├── templates/skills/      ← Skills Packs (QA-01 pilot available)
 ├── templates/.akoris/     ← templates to copy
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
 ```
