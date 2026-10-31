@@ -103,7 +103,7 @@ permettant 3 sessions LLM simultanées avec accès fichier partagé.
 - **Les templates :** `templates/` (à copier dans un projet)
 - **Les checklists :** `checklists/` (phase 0, bootstrap, sprint, verdict, clôture)
 - **Les scripts :** `scripts/` (init-project, validate-method) ; `.akoris/scripts/` (build-debt-index)
-- **Les exemples :** `examples/` (MVP, SaaS)
+- **Les exemples :** `examples/` (instances SPA et cas d’usage concrets, à venir)
 
 ---
 
