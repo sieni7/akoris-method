@@ -165,7 +165,7 @@ akoris-method/
 ├── LICENSE                ← MIT + Apache-2.0 + CC-BY-4.0
 ├── CONTACT.md             ← author contact
 ├── docs/                  ← the book
-├── decisions/             ← 48 decisions + 1 clarification
+├── decisions/             ← 49 frozen decisions (001-048, 050) + 1 clarification (049)
 ├── checklists/            ← phase 0, bootstrap, sprint, verdict, closure
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — available
 ├── tests/                 ← 21 Python tests across 4 files
@@ -182,7 +182,7 @@ akoris-method/
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Founding principles |
 | [`docs/`](docs/) | The book (ch.0 available) |
-| [`decisions/`](decisions/) | 48 decisions + 1 clarification |
+| [`decisions/`](decisions/) | 49 frozen decisions (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → closure |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | The constitution (22 sections) |
 
@@ -193,7 +193,7 @@ akoris-method/
 Contributions are welcome. Before submitting a PR:
 
 1. Read [`METHOD.md`](METHOD.md) and [`decisions/`](decisions/).
-2. Check that the change complies with the 48 decisions
+2. Check that the change complies with the 49 frozen decisions (001-048, 050) + 1 clarification (049)
    (or propose an ADR for a new decision).
 3. Run `pytest` (21 Python tests across 4 files).
 4. Run `shellcheck scripts/*.sh` (0 warnings expected).

@@ -1,5 +1,6 @@
 // commitlint — convention Conventional Commits (décision 023)
 // Footer obligatoire : Refs: <ADR-NNNN | DT-NNN | C-NN | Bloc N>
+// Trailer DCO obligatoire : Signed-off-by: <Nom> <email>
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
@@ -15,10 +16,11 @@ module.exports = {
       [
         'auth', 'api', 'ui', 'db', 'ci', 'doc', 'akoris', 'state', 'debt',
         'context', 'audit', 'checklist', 'license', 'readme', 'changelog',
-        'decisions', 'scripts', 'bootstrap',
+        'decisions', 'scripts', 'bootstrap', 'contributing', 'method',
       ],
     ],
     'subject-case': [0],
     'footer-max-line-length': [2, 'always', 200],
+    'trailer-exists': [2, 'always', 'Signed-off-by:'],
   },
 };

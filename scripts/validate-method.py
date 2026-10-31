@@ -80,11 +80,11 @@ def check_decisions(repo, r):
         return
     files = sorted(d.glob("*.md"))
     nums = [int(m.group(1)) for f in files if (m := re.match(r"^(\d{3})-", f.name))]
-    missing = [n for n in range(1, 50) if n not in nums]
+    missing = [n for n in range(1, 51) if n not in nums]
     if missing:
         r.error(f"Décisions manquantes : {missing}")
     else:
-        r.ok("49 décisions (001-049)")
+        r.ok("50 décisions numérotées (001-050)")
     for f in files:
         c = f.read_text(encoding="utf-8")
         for s in DECISION_SECTIONS:
