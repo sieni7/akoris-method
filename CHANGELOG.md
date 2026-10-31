@@ -8,11 +8,21 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-31
+
 ### Added
-- Rédaction du livre (parties 0 à VIII) en cours.
+- Standard de Prompt AKORIS (SPA), son template vierge et ses 13 rubriques normatives.
+- Réécriture des prompts Orchestrator, Builder et Auditor selon le SPA.
+- Instance SPA du Générateur de Contexte, avec brainstorming A1–A4 et phases B/C.
+- Chapitres 1 et 2 du livre : [Fondations](docs/01-fondations.md) et [Architecture](docs/02-architecture.md).
+
+### Fixed
+- Lot A4 : génération de l’index canonique des dettes lors de l’initialisation d’un projet.
+- Lot A5 : suppression de l’index de repli sans PyYAML et avertissement explicite à l’initialisation.
+- Bloc 11 : correction du compteur et des faux négatifs du validateur de cohérence.
+- Bloc 12 : validation automatisée de la présence et de l’ordre des 13 rubriques SPA.
 
 ---
-
 ## [0.1.1] — 2026-10-29
 
 ### Added
