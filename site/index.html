@@ -153,7 +153,7 @@
           </div>
         </div>
 
-        <div class="panel terminal-grid overflow-hidden rounded-xl" data-hero-carousel>
+        <div class="panel terminal-grid overflow-hidden rounded-xl aspect-auto lg:aspect-video lg:flex lg:flex-col" data-hero-carousel>
           <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div class="flex items-center gap-2" aria-hidden="true">
               <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
@@ -162,7 +162,7 @@
             </div>
             <span class="font-mono text-xs text-gray-500">preuve / validation</span>
           </div>
-          <div class="relative min-h-[390px] sm:min-h-[410px]">
+          <div class="relative min-h-[390px] sm:min-h-[410px] lg:min-h-0 lg:flex-1">
             <article class="absolute inset-0 space-y-5 p-6 opacity-100 transition-opacity duration-500 sm:p-8" data-hero-slide>
               <p class="font-mono text-sm text-gray-500"><span class="text-green-300">$</span> python scripts/validate-method.py --strict</p>
               <div class="border-l border-green-400/40 pl-4">
@@ -237,19 +237,19 @@ Signed-off-by: Oulai Sieni Tarek
             </p>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
-            <article class="panel relative overflow-hidden rounded-xl p-6">
+            <article class="panel relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.1)]">
               <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">01</span>
               <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 01</p>
               <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-brain text-green-300"></i>Zéro Hallucination</h3>
               <p class="relative z-10 mt-3 text-sm leading-6 text-gray-300">Les affirmations sont vérifiées ou signalées comme hypothèses; les preuves sont tracées.</p>
             </article>
-            <article class="panel relative overflow-hidden rounded-xl p-6">
+            <article class="panel relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.1)]">
               <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">02</span>
               <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 02</p>
               <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-cubes text-green-300"></i>Zéro Code Spaghetti</h3>
               <p class="relative z-10 mt-3 text-sm leading-6 text-gray-300">Architecture stricte et séparation des piliers.</p>
             </article>
-            <article class="panel relative overflow-hidden rounded-xl p-6">
+            <article class="panel relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/50 hover:shadow-[0_0_15px_rgba(74,222,128,0.1)]">
               <span aria-hidden="true" class="pointer-events-none absolute right-4 top-2 font-mono text-6xl font-bold text-white opacity-10">03</span>
               <p class="relative z-10 font-mono text-xs text-green-300">BOUSSOLE 03</p>
               <h3 class="relative z-10 mt-4 flex items-center gap-3 font-mono text-xl font-semibold text-white"><i aria-hidden="true" class="fa-solid fa-scale-balanced text-green-300"></i>Zéro Dette Non Maîtrisée</h3>
@@ -304,9 +304,9 @@ Signed-off-by: Oulai Sieni Tarek
             <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Structure &amp; Rôles</h2>
             <p class="mt-4 text-base leading-7 text-gray-300">Un projet AKORIS repose sur une séparation stricte des responsabilités.</p>
             <ul class="mt-7 space-y-4 text-sm leading-6 text-gray-300">
-              <li><span class="font-mono font-semibold text-white">Orchestrator</span><br />Planifie, découpe et coordonne.</li>
-              <li><span class="font-mono font-semibold text-white">Builder</span><br />Exécute, code et commit dans le périmètre autorisé.</li>
-              <li><span class="font-mono font-semibold text-white">Auditor</span><br />Contrôle, teste et rapporte.</li>
+              <li><span class="font-mono font-semibold text-white">Orchestrator</span> <span class="rounded bg-gray-500/20 px-2 py-0.5 font-mono text-[10px] text-gray-300 border border-gray-500/30">LLM</span><br />Planifie, découpe et coordonne.</li>
+              <li><span class="font-mono font-semibold text-white">Builder</span> <span class="rounded bg-gray-500/20 px-2 py-0.5 font-mono text-[10px] text-gray-300 border border-gray-500/30">LLM</span><br />Exécute, code et commit dans le périmètre autorisé.</li>
+              <li><span class="font-mono font-semibold text-white">Auditor</span> <span class="rounded bg-gray-500/20 px-2 py-0.5 font-mono text-[10px] text-gray-300 border border-gray-500/30">LLM</span><br />Contrôle, teste et rapporte.</li>
               <li class="border-l-4 border-green-400 pl-4"><span class="font-mono font-semibold text-white">Validator</span> <span class="rounded bg-green-400/10 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-green-300">HUMAIN</span><br />Autorise, tranche et décide.</li>
             </ul>
           </div>
@@ -317,14 +317,14 @@ Signed-off-by: Oulai Sieni Tarek
 ├── doc/          # Documentation technique et produit
 └── .akoris/      # Gouvernance (contexte, état, dettes, ADR)</code></pre>
             <div class="border-t border-white/10 px-5 py-3 font-mono text-xs text-gray-500 sm:px-7">cycle / gouvernance</div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 font-mono text-[10px] sm:text-xs text-green-200 py-4 border-t border-white/10 mt-4">
-              <span class="bg-black/30 px-2 py-1 rounded">Orchestrator (Plan)</span>
-              <span class="text-green-400 sm:-rotate-90">↓</span>
-              <span class="bg-black/30 px-2 py-1 rounded">Builder (Code)</span>
-              <span class="text-green-400 sm:-rotate-90">↓</span>
-              <span class="bg-black/30 px-2 py-1 rounded">Auditor (Audit)</span>
-              <span class="text-green-400 sm:-rotate-90">↓</span>
-              <span class="bg-black/30 px-2 py-1 rounded text-green-300 font-bold">Validator (Décision)</span>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 font-mono text-[10px] sm:text-xs py-4 border-t border-white/10 mt-4">
+              <div class="w-24 h-24 flex items-center justify-center text-center rounded-lg border border-white/10 bg-black/30 text-gray-300">Orchestrator<br />(Plan)</div>
+              <span aria-hidden="true" class="text-green-400 sm:hidden">↓</span><span aria-hidden="true" class="hidden text-green-400 sm:inline">→</span>
+              <div class="w-24 h-24 flex items-center justify-center text-center rounded-lg border border-white/10 bg-black/30 text-gray-300">Builder<br />(Code)</div>
+              <span aria-hidden="true" class="text-green-400 sm:hidden">↓</span><span aria-hidden="true" class="hidden text-green-400 sm:inline">→</span>
+              <div class="w-24 h-24 flex items-center justify-center text-center rounded-lg border border-white/10 bg-black/30 text-gray-300">Auditor<br />(Audit)</div>
+              <span aria-hidden="true" class="text-green-400 sm:hidden">↓</span><span aria-hidden="true" class="hidden text-green-400 sm:inline">→</span>
+              <div class="w-28 h-28 flex items-center justify-center text-center rounded-lg border border-green-500/50 bg-green-500/10 text-green-300 font-bold">Validator<br />(Décision)<br /><span class="text-[9px] tracking-wider">HUMAIN</span></div>
             </div>
           </div>
         </div>
@@ -339,12 +339,7 @@ Signed-off-by: Oulai Sieni Tarek
           </div>
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">spa / 13 rubriques</div>
-            <details class="group">
-              <summary class="cursor-pointer list-none flex items-center justify-between text-sm font-mono text-green-300 hover:text-green-200 transition">
-                <span>Voir les 13 rubriques du SPA</span>
-                <span aria-hidden="true" class="transition-transform group-open:rotate-180">▼</span>
-              </summary>
-              <div class="grid grid-cols-1 gap-4 px-5 pb-5 pt-4 md:grid-cols-2 sm:px-7 sm:pb-7">
+            <div class="grid grid-cols-1 gap-4 p-5 md:grid-cols-2 sm:p-7">
                 <ol class="list-none space-y-2">
                   <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">0.</span>Contrat d’exécution</li>
                   <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">1.</span>Identité et rôle</li>
@@ -362,8 +357,7 @@ Signed-off-by: Oulai Sieni Tarek
                   <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">11.</span>Contraintes, risques et sécurité</li>
                   <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">12.</span>Communication et fin de mission</li>
                 </ol>
-              </div>
-            </details>
+            </div>
           </div>
         </div>
       </section>
@@ -427,29 +421,29 @@ Signed-off-by: Oulai Sieni Tarek
           <p class="font-mono text-xs uppercase tracking-[0.22em] text-green-300">05 / Positionnement</p>
           <h2 class="mt-3 font-mono text-3xl font-bold text-white sm:text-4xl">Ce qu’est AKORIS — et ce qu’il n’est pas</h2>
           <h3 class="font-mono text-xl font-bold text-white mt-12 mb-6">Le sens du nom</h3>
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">A</span> <span class="font-mono text-lg font-bold text-white">Adaptive</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">A</span><span class="text-white">daptive</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">La méthode s'adapte à la taille du projet et à la nature du sprint.</p>
             </div>
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">K</span> <span class="font-mono text-lg font-bold text-white">Knowledge</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">K</span><span class="text-white">nowledge</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">La méthode capitalise la connaissance (ADR, dettes, contexte).</p>
             </div>
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">O</span> <span class="font-mono text-lg font-bold text-white">Orchestrated</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">O</span><span class="text-white">rchestrated</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">Les agents sont coordonnés (pas d'improvisation, un verrou).</p>
             </div>
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">R</span> <span class="font-mono text-lg font-bold text-white">Review</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">R</span><span class="text-white">eview</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">Le contrôle est systématique (Auditor QA et SecOps).</p>
             </div>
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">I</span> <span class="font-mono text-lg font-bold text-white">Iterative</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">I</span><span class="text-white">terative</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">Le développement avance par itérations courtes (sprints).</p>
             </div>
             <div class="panel rounded-xl p-5">
-              <p><span class="font-mono text-3xl font-bold text-green-400">S</span> <span class="font-mono text-lg font-bold text-white">Systems</span></p>
+              <p class="flex items-baseline gap-0 font-mono font-bold"><span class="text-2xl text-green-400">S</span><span class="text-white">ystems</span></p>
               <p class="mt-2 text-sm leading-6 text-gray-300">Le produit final est un système complet (code, doc, gouvernance).</p>
             </div>
           </div>
@@ -476,16 +470,33 @@ Signed-off-by: Oulai Sieni Tarek
       </section>
     </main>
 
-    <footer class="border-t border-white/10 bg-black/20">
-      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <p class="max-w-xl text-sm leading-6 text-gray-300">AKORIS — Gouvernance du développement logiciel assisté par IA.<br /><span class="text-gray-300">Créé par Oulai Sieni Tarek.</span></p>
-        <nav aria-label="Liens de pied de page" class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-gray-300">
+    <footer class="border-t border-white/10 bg-[#0a1a12]">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-5 py-8 sm:px-8 md:grid-cols-3">
+        <div>
+          <a class="font-mono text-lg font-bold tracking-[0.22em] text-white" href="#accueil">AKORIS<span class="text-green-400">_</span></a>
+          <p class="mt-2 text-sm text-gray-300">Créé par Oulai Sieni Tarek</p>
+        </div>
+        <nav aria-label="Liens de pied de page" class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-gray-300 md:justify-center">
           <a class="hover:text-green-300" href="#methode">Méthode</a>
           <a class="hover:text-green-300" href="#preuves">Preuves</a>
-          <a class="hover:text-green-300" href="mailto:sieni7@gmail.com">Contact</a>
         </nav>
+        <div aria-label="Réseaux sociaux" class="flex items-center gap-3 md:justify-end">
+          <a aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-xl text-gray-400 transition hover:border-green-500/50 hover:text-green-400" href="https://www.facebook.com/">
+            <i aria-hidden="true" class="fa-brands fa-facebook"></i>
+          </a>
+          <a aria-label="Courriel" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-xl text-gray-400 transition hover:border-green-500/50 hover:text-green-400" href="mailto:sieni7@gmail.com">
+            <i aria-hidden="true" class="fa-solid fa-envelope"></i>
+          </a>
+          <a aria-label="GitHub AKORIS" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-xl text-gray-400 transition hover:border-green-500/50 hover:text-green-400" href="https://github.com/sieni7/akoris-method">
+            <i aria-hidden="true" class="fa-brands fa-github"></i>
+          </a>
+        </div>
       </div>
     </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut de page" class="fixed bottom-8 right-8 z-50 rounded-full border border-green-500/50 bg-green-500/20 p-3 text-green-400 opacity-0 pointer-events-none transition hover:bg-green-500/40">
+      <i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script>
       (() => {
@@ -640,6 +651,20 @@ Signed-off-by: Oulai Sieni Tarek
           window.matchMedia('(min-width: 768px)').addEventListener('change', (event) => {
             if (event.matches) setMenuOpen(false);
           });
+        }
+
+        const backToTop = document.querySelector('#back-to-top');
+        if (backToTop) {
+          const updateBackToTop = () => {
+            const visible = window.scrollY > 300;
+            backToTop.classList.toggle('opacity-0', !visible);
+            backToTop.classList.toggle('pointer-events-none', !visible);
+            backToTop.classList.toggle('opacity-100', visible);
+            backToTop.classList.toggle('pointer-events-auto', visible);
+          };
+          window.addEventListener('scroll', updateBackToTop, { passive: true });
+          backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+          updateBackToTop();
         }
 
       })();
