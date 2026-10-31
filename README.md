@@ -181,12 +181,12 @@ akoris-method/
 
 ## Documentation
 
-Le livre compte actuellement 10 chapitres disponibles (ch.0 à ch.9).
+Le livre compte actuellement 12 chapitres disponibles (ch.0 à ch.11).
 
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre (10 chapitres disponibles, ch.0 à ch.9), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
+| [`docs/`](docs/) | Le livre (12 chapitres disponibles, ch.0 à ch.11), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |

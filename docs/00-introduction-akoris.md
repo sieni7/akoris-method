@@ -117,7 +117,7 @@ AKORIS **est** :
 
 ## 0.5 Comment lire ce livre
 
-Ce livre est en cours de rédaction. Les chapitres 0 à 9 sont actuellement disponibles.
+Ce livre est en cours de rédaction. Les 12 chapitres (ch.0 à ch.11) sont actuellement disponibles.
 
 ### Trois parcours possibles
 
