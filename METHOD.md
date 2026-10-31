@@ -98,7 +98,7 @@ permettant 3 sessions LLM simultanées avec accès fichier partagé.
 
 ## 7. Pour aller plus loin
 
-- **Le livre :** `docs/` (1 chapitre disponible, ch.0)
+- **Le livre :** `docs/` (3 chapitres disponibles, ch.0–2)
 - **Les décisions :** `decisions/` (49 décisions figées (001-048, 050) + 1 clarification (049))
 - **Les templates :** `templates/` (à copier dans un projet)
 - **Les checklists :** `checklists/` (phase 0, bootstrap, sprint, verdict, clôture)

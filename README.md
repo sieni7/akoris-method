@@ -184,7 +184,7 @@ akoris-method/
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre (ch.0 disponible) |
+| [`docs/`](docs/) | Le livre (3 chapitres disponibles, ch.0–2) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (22 sections) |
