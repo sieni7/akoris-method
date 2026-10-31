@@ -62,7 +62,7 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 - Conventional Commits + SemVer
 - Auditor QA permanent + SecOps checkpoint (`🔒`)
 - Stratégie de tests V0 (TNR + sécu + UAT implicite)
-- Découpage 1 tâche = 1+ commits = 1 critère
+- Découpage 1 tâche = 1+ commits = 1 critère (Formule abandonnée au profit de : 1 tâche → 1 critère → ≥ 1 commit)
 - Commande `doctor` (R1+R2+R4 défaut)
 
 ---
