@@ -86,6 +86,12 @@ Le Validator (humain) tape `go` (ou un verdict) **dans l'onglet concerné** pour
 | **GO de déclenchement** | A, B, C | Début du tour de l'agent | Autoriser l'agent à travailler |
 | **Verdict** | C uniquement | Fin du cycle (après audit) | Trancher sur la livraison |
 
+### Commandes d'urgence
+
+| Autorisation | Commande | Description |
+|--------------|----------|-------------|
+| Onglet A, B ou C (si verrou orphelin) | `go force-unlock` | Libère le verrou si `locked_since` > 30 min. Réservé au Validator. Détails §9 règle 8. |
+
 ### Ce que le Validator tape, par onglet
 
 **Onglet A — Orchestrator**
