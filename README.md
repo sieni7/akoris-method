@@ -184,7 +184,7 @@ akoris-method/
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre (3 chapitres disponibles, ch.0–2) |
+| [`docs/`](docs/) | Le livre (5 chapitres disponibles, ch.0–4), dont [`ch.3 — Démarrage`](docs/03-demarrage.md) et [`ch.4 — Cycle de Sprint`](docs/04-cycle-sprint.md) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (22 sections) |
