@@ -59,6 +59,15 @@
         background-size: 100% 26px;
       }
 
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -232,12 +241,12 @@ Signed-off-by: Oulai Sieni Tarek
           </div>
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">structure / projet</div>
-            <pre class="overflow-x-auto whitespace-pre p-5 font-mono text-sm leading-7 text-green-200 sm:p-7"><code>mon-projet/
-├── app/          # Produit exécutable (Builder, sauf init bootstrap)
+            <pre class="no-scrollbar overflow-x-auto whitespace-pre p-5 font-mono text-sm leading-6 text-green-200 sm:p-7"><code>mon-projet/
+├── app/          # Produit exécutable (Builder)
 ├── doc/          # Documentation technique et produit
 └── .akoris/      # Gouvernance (contexte, état, dettes, ADR)</code></pre>
             <div class="border-t border-white/10 px-5 py-3 font-mono text-xs text-gray-500 sm:px-7">cycle / gouvernance</div>
-            <pre class="flex min-h-[64px] items-center overflow-x-auto whitespace-nowrap px-5 py-4 font-mono text-[11px] leading-6 text-green-200 sm:px-7 sm:text-xs"><code>Orchestrator (Plan) -&gt; Builder (Code) -&gt; Auditor (Audit) -&gt; Validator (Décision)</code></pre>
+            <pre class="no-scrollbar flex min-h-[64px] items-center overflow-x-auto whitespace-nowrap px-5 py-4 font-mono text-[10px] leading-6 text-green-200 sm:px-7 sm:text-xs"><code>Orchestrator (Plan) -&gt; Builder (Code) -&gt; Auditor (Audit) -&gt; Validator (Décision)</code></pre>
           </div>
         </div>
       </section>
