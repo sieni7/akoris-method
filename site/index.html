@@ -222,17 +222,38 @@ Signed-off-by: Oulai Sieni Tarek
             <div class="col-span-full mt-6">
               <h3 class="font-mono text-lg font-semibold text-white">Verdicts du Validator</h3>
               <div class="mt-4 grid gap-3 sm:grid-cols-3">
-                <div class="rounded-lg border border-green-300/20 bg-green-300/5 p-4">
-                  <p class="font-mono text-sm font-bold text-green-300">go</p>
-                  <p class="mt-1 text-sm text-gray-400">Validé</p>
+                <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
+                  <div class="flex flex-col text-left">
+                    <p class="font-mono text-sm font-bold text-green-300">go</p>
+                    <p class="mt-1 text-sm text-gray-400">Validé</p>
+                  </div>
+                  <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
+                    <span class="w-3 h-3 rounded-full bg-red-500/20"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/20"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
+                  </div>
                 </div>
-                <div class="rounded-lg border border-yellow-200/20 bg-yellow-200/5 p-4">
-                  <p class="font-mono text-sm font-bold text-yellow-200">go with reserve</p>
-                  <p class="mt-1 text-sm text-gray-400">Validé avec dette</p>
+                <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
+                  <div class="flex flex-col text-left">
+                    <p class="font-mono text-sm font-bold text-yellow-200">go with reserve</p>
+                    <p class="mt-1 text-sm text-gray-400">Validé avec dette</p>
+                  </div>
+                  <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
+                    <span class="w-3 h-3 rounded-full bg-red-500/20"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500 shadow-[0_0_8px_#eab308]"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/20"></span>
+                  </div>
                 </div>
-                <div class="rounded-lg border border-red-300/20 bg-red-300/5 p-4">
-                  <p class="font-mono text-sm font-bold text-red-300">no-go</p>
-                  <p class="mt-1 text-sm text-gray-400">Refusé</p>
+                <div class="panel rounded-xl p-5 flex flex-row items-center justify-between">
+                  <div class="flex flex-col text-left">
+                    <p class="font-mono text-sm font-bold text-red-300">no-go</p>
+                    <p class="mt-1 text-sm text-gray-400">Refusé</p>
+                  </div>
+                  <div aria-hidden="true" class="flex flex-col gap-1.5 p-1.5 bg-black/50 border border-white/10 rounded-full w-fit">
+                    <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_#ef4444]"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/20"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/20"></span>
+                  </div>
                 </div>
               </div>
             </div>
