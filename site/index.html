@@ -73,7 +73,7 @@
       >Aller au contenu</a
     >
 
-    <header class="border-b border-white/10">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/80 border-b border-white/10">
       <nav
         aria-label="Navigation principale"
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8"
@@ -89,7 +89,7 @@
     </header>
 
     <main id="contenu">
-      <section id="accueil" class="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+      <section id="accueil" class="mx-auto grid max-w-7xl gap-12 px-5 pt-32 pb-20 sm:px-8 sm:pt-32 sm:pb-28 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
         <div>
           <div class="mb-7 flex flex-wrap items-center gap-3">
             <span class="inline-flex items-center gap-2 rounded-full border border-green-300/30 bg-green-300/10 px-3 py-1.5 font-mono text-xs font-semibold text-green-300">
@@ -208,14 +208,11 @@
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">structure / projet</div>
             <pre class="whitespace-pre-wrap break-words p-5 font-mono text-sm leading-7 text-green-200 sm:p-7"><code>mon-projet/
-├── app/          # Produit exécutable (Builder, sauf init bootstrap)
-├── doc/          # Documentation technique et produit
-└── .akoris/      # Gouvernance (contexte, état, dettes, ADR)</code></pre>
+            ├── app/          # Produit exécutable (Builder, sauf init bootstrap)
+            ├── doc/          # Documentation technique et produit
+            └── .akoris/      # Gouvernance (contexte, état, dettes, ADR)</code></pre>
             <div class="border-t border-white/10 px-5 py-3 font-mono text-xs text-gray-500 sm:px-7">cycle / gouvernance</div>
-            <pre class="whitespace-pre-wrap break-words p-5 font-mono text-sm leading-7 text-green-200 sm:p-7"><code>Orchestrator (Plan) -&gt;
-Builder (Code) -&gt;
-Auditor (Audit) -&gt;
-Validator (Décision)</code></pre>
+            <pre class="overflow-x-auto whitespace-nowrap p-4 font-mono text-[10px] leading-6 text-green-200 sm:p-7 sm:text-xs"><code>Orchestrator (Plan) -&gt; Builder (Code) -&gt; Auditor (Audit) -&gt; Validator (Décision)</code></pre>
           </div>
         </div>
       </section>
@@ -229,19 +226,25 @@ Validator (Décision)</code></pre>
           </div>
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">spa / 13 rubriques</div>
-            <pre class="whitespace-pre-wrap break-words p-5 font-mono text-xs leading-6 text-gray-300 sm:p-7 sm:text-sm"><code>0. Contrat d’exécution
-1. Identité et rôle
-2. Contexte
-3. Objectifs et résultats attendus
-4. Périmètre et exclusions
-5. Entrées et sources de vérité
-6. Processus et phases
-7. Règles de décision et escalade
-8. Outils et environnement d’exécution
-9. Livrables et format de sortie
-10. Qualité et critères d’acceptation
-11. Contraintes, risques et sécurité
-12. Communication et fin de mission</code></pre>
+            <div class="grid grid-cols-1 gap-4 p-5 md:grid-cols-2 sm:p-7">
+              <ol class="list-none space-y-2">
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">0.</span>Contrat d’exécution</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">1.</span>Identité et rôle</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">2.</span>Contexte</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">3.</span>Objectifs et résultats attendus</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">4.</span>Périmètre et exclusions</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">5.</span>Entrées et sources de vérité</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">6.</span>Processus et phases</li>
+              </ol>
+              <ol class="list-none space-y-2">
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">7.</span>Règles de décision et escalade</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">8.</span>Outils et environnement d’exécution</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">9.</span>Livrables et format de sortie</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">10.</span>Qualité et critères d’acceptation</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">11.</span>Contraintes, risques et sécurité</li>
+                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">12.</span>Communication et fin de mission</li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
@@ -322,9 +325,6 @@ Warnings : 0
           <a class="hover:text-green-300" href="#preuves">Preuves</a>
           <a class="hover:text-green-300" href="mailto:sieni7@gmail.com">Contact</a>
         </nav>
-      </div>
-      <div class="mx-auto max-w-7xl px-5 pb-7 sm:px-8">
-        <p class="font-mono text-xs leading-5 text-gray-500">Glossaire : SPA (Standard de Prompt), ADR (Décision d’architecture), DT (Dette Technique), GO (Autorisation).</p>
       </div>
     </footer>
   </body>
