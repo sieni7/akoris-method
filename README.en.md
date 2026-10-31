@@ -181,7 +181,7 @@ akoris-method/
 | Document | Content |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Founding principles |
-| [`docs/`](docs/) | The book (5 chapters available, ch.0–4), including [`ch.3 — Getting Started`](docs/03-demarrage.md) and [`ch.4 — Sprint Cycle`](docs/04-cycle-sprint.md) |
+| [`docs/`](docs/) | The book (7 chapters available, ch.0–6), including [`ch.3 — Getting Started`](docs/03-demarrage.md), [`ch.4 — Sprint Cycle`](docs/04-cycle-sprint.md), [`ch.5 — Quality`](docs/05-qualite.md) and [`ch.6 — Git`](docs/06-git.md) |
 | [`decisions/`](decisions/) | 49 frozen decisions (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → closure |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | The constitution (22 sections) |
