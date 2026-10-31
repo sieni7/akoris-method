@@ -178,10 +178,12 @@ akoris-method/
 
 ## Documentation
 
+The book is complete with 9 chapters available (ch.0–8).
+
 | Document | Content |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Founding principles |
-| [`docs/`](docs/) | The book (7 chapters available, ch.0–6), including [`ch.3 — Getting Started`](docs/03-demarrage.md), [`ch.4 — Sprint Cycle`](docs/04-cycle-sprint.md), [`ch.5 — Quality`](docs/05-qualite.md) and [`ch.6 — Git`](docs/06-git.md) |
+| [`docs/`](docs/) | The complete book (9 chapters available, ch.0–8), including [`ch.7 — Debt & ADR`](docs/07-dettes-adr.md) and [`ch.8 — Evolution`](docs/08-evolution.md) |
 | [`decisions/`](decisions/) | 49 frozen decisions (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → closure |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | The constitution (22 sections) |

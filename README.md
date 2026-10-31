@@ -181,10 +181,12 @@ akoris-method/
 
 ## Documentation
 
+Le livre est complet avec 9 chapitres disponibles (ch.0–8).
+
 | Document | Contenu |
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
-| [`docs/`](docs/) | Le livre (7 chapitres disponibles, ch.0–6), dont [`ch.3 — Démarrage`](docs/03-demarrage.md), [`ch.4 — Cycle de Sprint`](docs/04-cycle-sprint.md), [`ch.5 — Qualité`](docs/05-qualite.md) et [`ch.6 — Git`](docs/06-git.md) |
+| [`docs/`](docs/) | Le livre complet (9 chapitres disponibles, ch.0–8), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (22 sections) |
