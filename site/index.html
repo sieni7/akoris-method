@@ -73,7 +73,7 @@
       >Aller au contenu</a
     >
 
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/80 border-b border-white/10">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0a1a12]/90 border-b border-white/10 shadow-lg shadow-black/20">
       <nav
         aria-label="Navigation principale"
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8"
@@ -115,7 +115,7 @@
           </div>
         </div>
 
-        <div class="panel terminal-grid overflow-hidden rounded-xl">
+        <div class="panel terminal-grid overflow-hidden rounded-xl" data-hero-carousel>
           <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div class="flex items-center gap-2" aria-hidden="true">
               <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
@@ -124,24 +124,49 @@
             </div>
             <span class="font-mono text-xs text-gray-500">preuve / validation</span>
           </div>
-          <div class="space-y-5 p-6 sm:p-8">
-            <p class="font-mono text-sm text-gray-500"><span class="text-green-300">$</span> python scripts/validate-method.py --strict</p>
-            <div class="border-l border-green-400/40 pl-4">
-              <p class="font-mono text-sm text-green-300">Vérifications : 8/8 passées</p>
-              <p class="mt-1 font-mono text-sm text-gray-300">Erreurs : 0</p>
-              <p class="font-mono text-sm text-gray-300">Warnings : 0</p>
-            </div>
-            <div class="grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
-              <div class="rounded-lg border border-white/10 bg-black/20 p-4">
-                <p class="font-mono text-2xl font-bold text-white">24</p>
-                <p class="mt-1 text-xs text-gray-500">tests automatisés</p>
+          <div class="relative min-h-[390px] sm:min-h-[410px]">
+            <article class="absolute inset-0 space-y-5 p-6 opacity-100 transition-opacity duration-500 sm:p-8" data-hero-slide>
+              <p class="font-mono text-sm text-gray-500"><span class="text-green-300">$</span> python scripts/validate-method.py --strict</p>
+              <div class="border-l border-green-400/40 pl-4">
+                <p class="font-mono text-sm text-green-300">Vérifications : 8/8 passées</p>
+                <p class="mt-1 font-mono text-sm text-gray-300">Erreurs : 0</p>
+                <p class="font-mono text-sm text-gray-300">Warnings : 0</p>
               </div>
-              <div class="rounded-lg border border-white/10 bg-black/20 p-4">
-                <p class="font-mono text-2xl font-bold text-white">49 + 1</p>
-                <p class="mt-1 text-xs text-gray-500">décisions + clarification</p>
+              <div class="grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
+                <div class="rounded-lg border border-white/10 bg-black/20 p-4">
+                  <p class="font-mono text-2xl font-bold text-white">24</p>
+                  <p class="mt-1 text-xs text-gray-500">tests automatisés</p>
+                </div>
+                <div class="rounded-lg border border-white/10 bg-black/20 p-4">
+                  <p class="font-mono text-2xl font-bold text-white">49 + 1</p>
+                  <p class="mt-1 text-xs text-gray-500">décisions + clarification</p>
+                </div>
               </div>
-            </div>
-            <p class="font-mono text-xs leading-5 text-gray-500">Contrôles exécutés sur le dépôt; la CI du commit courant est verte.</p>
+              <p class="font-mono text-xs leading-5 text-gray-500">Contrôles exécutés sur le dépôt; la CI du commit courant est verte.</p>
+            </article>
+            <article class="absolute inset-0 space-y-5 p-6 opacity-0 pointer-events-none transition-opacity duration-500 sm:p-8" data-hero-slide aria-hidden="true">
+              <p class="font-mono text-sm text-gray-500"><span class="text-green-300">$</span> tree -L 1</p>
+              <pre class="overflow-x-auto rounded-lg border border-white/10 bg-black/20 p-5 font-mono text-sm leading-7 text-green-200"><code>app/      <span class="text-gray-500"># Produit exécutable</span>
+doc/      <span class="text-gray-500"># Documentation</span>
+.akoris/  <span class="text-gray-500"># Gouvernance</span></code></pre>
+              <p class="font-mono text-xs leading-5 text-gray-500">Trois piliers, une séparation stricte des responsabilités.</p>
+            </article>
+            <article class="absolute inset-0 space-y-5 p-6 opacity-0 pointer-events-none transition-opacity duration-500 sm:p-8" data-hero-slide aria-hidden="true">
+              <p class="font-mono text-sm text-gray-500"><span class="text-green-300">$</span> git show --format=fuller -s</p>
+              <pre class="overflow-x-auto rounded-lg border border-white/10 bg-black/20 p-5 font-mono text-xs leading-6 text-green-200"><code>commit 18d608b
+Author: Oulai Sieni Tarek &lt;sieni7@gmail.com&gt;
+
+chore: trigger vercel deploy
+
+Signed-off-by: Oulai Sieni Tarek
+&lt;sieni7@gmail.com&gt;</code></pre>
+              <p class="font-mono text-xs leading-5 text-gray-500">Chaque changement est attribué, signé et traçable.</p>
+            </article>
+          </div>
+          <div class="flex justify-center gap-2 border-t border-white/10 px-5 py-4" role="tablist" aria-label="Slides de preuve">
+            <button class="h-2.5 w-2.5 rounded-full bg-green-400 transition" type="button" data-hero-dot aria-label="Afficher la slide 1" aria-selected="true"></button>
+            <button class="h-2.5 w-2.5 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 2" aria-selected="false"></button>
+            <button class="h-2.5 w-2.5 rounded-full bg-white/20 transition" type="button" data-hero-dot aria-label="Afficher la slide 3" aria-selected="false"></button>
           </div>
         </div>
       </section>
@@ -258,7 +283,7 @@
         <div class="grid gap-5 lg:grid-cols-[0.75fr_1.25fr]">
           <div class="panel rounded-xl p-6 sm:p-7">
             <ul class="space-y-5 text-sm leading-6 text-gray-300">
-              <li><span class="font-mono font-semibold text-white">49 décisions figées</span> (001–048, 050) + <span class="font-mono font-semibold text-white">1 clarification</span> (049).</li>
+              <li>Au moment de la publication de la v0.1.2 : <span class="font-mono font-semibold text-white">49 décisions figées</span> (001–048, 050) + <span class="font-mono font-semibold text-white">1 clarification</span> (049).</li>
               <li><span class="font-mono font-semibold text-white">24 tests automatisés</span>; la CI du commit actuel est verte.</li>
               <li><span class="font-mono font-semibold text-white">1 script de validation stricte</span> : <code class="text-green-300">validate-method.py</code>.</li>
             </ul>
@@ -269,11 +294,33 @@
               <span class="font-mono text-xs text-gray-400">sortie observée / validateur strict</span>
               <span class="font-mono text-xs text-green-300">exit 0</span>
             </div>
-            <pre class="whitespace-pre-wrap break-words p-5 font-mono text-xs leading-6 text-gray-300 sm:p-7 sm:text-sm"><code>=== Vérification de cohérence AKORIS ===
+            <div class="relative" data-terminal-carousel>
+              <div class="p-5 sm:p-7" data-terminal-slide>
+                <pre class="whitespace-pre-wrap break-words font-mono text-xs leading-6 text-gray-300 sm:text-sm"><code>=== Vérification de cohérence AKORIS ===
+$ python scripts/validate-method.py --strict
 Vérifications : 8/8 passées
 Erreurs : 0
 Warnings : 0
 ✅ Cohérence OK.</code></pre>
+              </div>
+              <div class="hidden p-5 sm:p-7" data-terminal-slide>
+                <pre class="whitespace-pre-wrap break-words font-mono text-xs leading-6 text-gray-300 sm:text-sm"><code>$ pytest -v
+24 passed in 0.42s
+
+==============================
+24 tests passed, 0 failed</code></pre>
+              </div>
+              <div class="hidden p-5 sm:p-7" data-terminal-slide>
+                <pre class="whitespace-pre-wrap break-words font-mono text-xs leading-6 text-gray-300 sm:text-sm"><code>$ git log --oneline -1
+18d608b chore: trigger vercel deploy
+Signed-off-by: Oulai Sieni Tarek &lt;sieni7@gmail.com&gt;</code></pre>
+              </div>
+              <div class="flex justify-between border-t border-white/10 px-5 py-3 sm:px-7" aria-label="Navigation des commandes">
+                <button class="rounded px-3 py-1 font-mono text-lg text-green-300 transition hover:bg-green-300/10" type="button" data-terminal-prev aria-label="Commande précédente">&lt;</button>
+                <span class="self-center font-mono text-xs text-gray-500" data-terminal-counter>1 / 3</span>
+                <button class="rounded px-3 py-1 font-mono text-lg text-green-300 transition hover:bg-green-300/10" type="button" data-terminal-next aria-label="Commande suivante">&gt;</button>
+              </div>
+            </div>
             <details class="border-t border-white/10 p-5 sm:px-7">
               <summary class="cursor-pointer font-mono text-sm text-green-300">Voir les 8 contrôles</summary>
               <ol class="mt-4 list-decimal space-y-2 pl-5 text-xs leading-5 text-gray-400">
@@ -327,5 +374,60 @@ Warnings : 0
         </nav>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const hero = document.querySelector('[data-hero-carousel]');
+        if (hero) {
+          const slides = [...hero.querySelectorAll('[data-hero-slide]')];
+          const dots = [...hero.querySelectorAll('[data-hero-dot]')];
+          let active = 0;
+          let timer;
+
+          const showHeroSlide = (index) => {
+            active = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => {
+              const selected = i === active;
+              slide.classList.toggle('opacity-100', selected);
+              slide.classList.toggle('opacity-0', !selected);
+              slide.classList.toggle('pointer-events-none', !selected);
+              slide.setAttribute('aria-hidden', String(!selected));
+            });
+            dots.forEach((dot, i) => {
+              const selected = i === active;
+              dot.classList.toggle('bg-green-400', selected);
+              dot.classList.toggle('bg-white/20', !selected);
+              dot.setAttribute('aria-selected', String(selected));
+            });
+          };
+
+          const restartHeroTimer = () => {
+            window.clearInterval(timer);
+            timer = window.setInterval(() => showHeroSlide(active + 1), 5000);
+          };
+
+          dots.forEach((dot, i) => dot.addEventListener('click', () => {
+            window.clearInterval(timer);
+            showHeroSlide(i);
+          }));
+          restartHeroTimer();
+        }
+
+        document.querySelectorAll('[data-terminal-carousel]').forEach((carousel) => {
+          const slides = [...carousel.querySelectorAll('[data-terminal-slide]')];
+          const counter = carousel.querySelector('[data-terminal-counter]');
+          let active = 0;
+
+          const showTerminalSlide = (index) => {
+            active = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => slide.classList.toggle('hidden', i !== active));
+            counter.textContent = `${active + 1} / ${slides.length}`;
+          };
+
+          carousel.querySelector('[data-terminal-prev]').addEventListener('click', () => showTerminalSlide(active - 1));
+          carousel.querySelector('[data-terminal-next]').addEventListener('click', () => showTerminalSlide(active + 1));
+        });
+      })();
+    </script>
   </body>
 </html>
