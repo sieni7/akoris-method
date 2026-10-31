@@ -42,7 +42,7 @@
         color: #f0fdf4;
       }
 
-      a:focus-visible, button:focus-visible {
+      a:focus-visible, button:focus-visible, summary:focus-visible {
         outline: 2px solid #4ade80;
         outline-offset: 4px;
       }
@@ -88,14 +88,25 @@
         aria-label="Navigation principale"
         class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8"
       >
-        <a class="font-mono text-lg font-bold tracking-[0.22em] text-white" href="#accueil">AKORIS<span class="text-green-400">_</span></a>
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-wider text-gray-300">
-          <a class="transition hover:text-green-300" href="#methode">Méthode</a>
-          <a class="transition hover:text-green-300" href="#structure">Structure</a>
-          <a class="transition hover:text-green-300" href="#spa">SPA</a>
-          <a class="transition hover:text-green-300" href="#preuves">Preuves</a>
+        <a id="nav-accueil" class="font-mono text-lg font-bold tracking-[0.22em] text-white" href="#accueil">AKORIS<span class="text-green-400">_</span></a>
+        <div class="hidden flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-wider text-gray-300 md:flex">
+          <a id="nav-methode" data-scrollspy="methode" class="transition hover:text-green-300" href="#methode">Méthode</a>
+          <a id="nav-structure" data-scrollspy="structure" class="transition hover:text-green-300" href="#structure">Structure</a>
+          <a id="nav-spa" data-scrollspy="spa" class="transition hover:text-green-300" href="#spa">SPA</a>
+          <a id="nav-preuves" data-scrollspy="preuves" class="transition hover:text-green-300" href="#preuves">Preuves</a>
         </div>
+        <button class="rounded p-2 text-xl text-gray-300 transition hover:text-green-300 md:hidden" type="button" data-mobile-menu-button aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
+          <i aria-hidden="true" class="fa-solid fa-bars"></i>
+        </button>
       </nav>
+      <div id="mobile-menu" class="hidden border-t border-white/10 bg-[#0a1a12]/95 px-5 py-4 md:hidden">
+        <nav aria-label="Navigation mobile" class="mx-auto flex max-w-7xl flex-col gap-4 font-mono text-sm uppercase tracking-wider text-gray-300 sm:px-3">
+          <a id="mobile-nav-methode" data-scrollspy="methode" class="transition hover:text-green-300" href="#methode">Méthode</a>
+          <a id="mobile-nav-structure" data-scrollspy="structure" class="transition hover:text-green-300" href="#structure">Structure</a>
+          <a id="mobile-nav-spa" data-scrollspy="spa" class="transition hover:text-green-300" href="#spa">SPA</a>
+          <a id="mobile-nav-preuves" data-scrollspy="preuves" class="transition hover:text-green-300" href="#preuves">Preuves</a>
+        </nav>
+      </div>
     </header>
 
     <main id="contenu">
@@ -328,25 +339,31 @@ Signed-off-by: Oulai Sieni Tarek
           </div>
           <div class="panel overflow-hidden rounded-xl">
             <div class="border-b border-white/10 px-5 py-3 font-mono text-xs text-gray-500">spa / 13 rubriques</div>
-            <div class="grid grid-cols-1 gap-4 p-5 md:grid-cols-2 sm:p-7">
-              <ol class="list-none space-y-2">
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">0.</span>Contrat d’exécution</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">1.</span>Identité et rôle</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">2.</span>Contexte</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">3.</span>Objectifs et résultats attendus</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">4.</span>Périmètre et exclusions</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">5.</span>Entrées et sources de vérité</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">6.</span>Processus et phases</li>
-              </ol>
-              <ol class="list-none space-y-2">
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">7.</span>Règles de décision et escalade</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">8.</span>Outils et environnement d’exécution</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">9.</span>Livrables et format de sortie</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">10.</span>Qualité et critères d’acceptation</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">11.</span>Contraintes, risques et sécurité</li>
-                <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">12.</span>Communication et fin de mission</li>
-              </ol>
-            </div>
+            <details class="group">
+              <summary class="cursor-pointer list-none flex items-center justify-between text-sm font-mono text-green-300 hover:text-green-200 transition">
+                <span>Voir les 13 rubriques du SPA</span>
+                <span aria-hidden="true" class="transition-transform group-open:rotate-180">▼</span>
+              </summary>
+              <div class="grid grid-cols-1 gap-4 px-5 pb-5 pt-4 md:grid-cols-2 sm:px-7 sm:pb-7">
+                <ol class="list-none space-y-2">
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">0.</span>Contrat d’exécution</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">1.</span>Identité et rôle</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">2.</span>Contexte</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">3.</span>Objectifs et résultats attendus</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">4.</span>Périmètre et exclusions</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">5.</span>Entrées et sources de vérité</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">6.</span>Processus et phases</li>
+                </ol>
+                <ol class="list-none space-y-2">
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">7.</span>Règles de décision et escalade</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">8.</span>Outils et environnement d’exécution</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">9.</span>Livrables et format de sortie</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">10.</span>Qualité et critères d’acceptation</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">11.</span>Contraintes, risques et sécurité</li>
+                  <li class="text-sm leading-5 text-gray-300"><span class="mr-2 font-mono text-green-300">12.</span>Communication et fin de mission</li>
+                </ol>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -561,6 +578,68 @@ Signed-off-by: Oulai Sieni Tarek
           }, { threshold: 0.5 });
 
           observer.observe(proofs);
+        }
+
+        const scrollspyLinks = [...document.querySelectorAll('[data-scrollspy]')];
+        const scrollspySections = [...new Set(scrollspyLinks
+          .map((link) => document.querySelector(link.getAttribute('href')))
+          .filter(Boolean))];
+        if (scrollspyLinks.length && scrollspySections.length) {
+          const updateScrollspy = () => {
+            const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+            const viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+            const active = scrollspySections.map((section) => {
+              const rect = section.getBoundingClientRect();
+              const visibleWidth = Math.max(0, Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0));
+              const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+              const ratio = rect.width && rect.height ? (visibleWidth * visibleHeight) / (rect.width * rect.height) : 0;
+              return [section.id, ratio];
+            })
+              .filter(([, ratio]) => ratio > 0.5)
+              .sort((a, b) => b[1] - a[1])[0]?.[0];
+            scrollspyLinks.forEach((link) => {
+              const selected = Boolean(active) && link.dataset.scrollspy === active;
+              link.classList.toggle('text-green-400', selected);
+              link.classList.toggle('font-bold', selected);
+              if (selected) link.setAttribute('aria-current', 'location');
+              else link.removeAttribute('aria-current');
+            });
+          };
+          window.addEventListener('scroll', updateScrollspy, { passive: true });
+          window.addEventListener('resize', updateScrollspy);
+          if ('IntersectionObserver' in window) {
+            const scrollspyObserver = new IntersectionObserver(() => updateScrollspy(), { threshold: [0, 0.5, 1] });
+            scrollspySections.forEach((section) => scrollspyObserver.observe(section));
+          }
+          updateScrollspy();
+        }
+
+        const menuButton = document.querySelector('[data-mobile-menu-button]');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        const menuIcon = menuButton?.querySelector('i');
+        if (menuButton && mobileMenu && menuIcon) {
+          const setMenuOpen = (open) => {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.setAttribute('aria-label', open ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
+            menuIcon.classList.toggle('fa-bars', !open);
+            menuIcon.classList.toggle('fa-xmark', open);
+          };
+          menuButton.addEventListener('click', () => {
+            setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+          });
+          mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setMenuOpen(false));
+          });
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+              setMenuOpen(false);
+              menuButton.focus();
+            }
+          });
+          window.matchMedia('(min-width: 768px)').addEventListener('change', (event) => {
+            if (event.matches) setMenuOpen(false);
+          });
         }
 
       })();
