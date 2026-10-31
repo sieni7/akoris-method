@@ -187,6 +187,10 @@ The book currently has 10 available chapters (ch.0 to ch.9).
 | [`decisions/`](decisions/) | 49 frozen decisions (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → closure |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | The constitution (23 sections, §0 to §22) |
+| [`QA-01 Code Reviewer`](templates/skills/QA-01-Code-Reviewer/SKILL.md) | Code-review skill pilot |
+
+
+AKORIS introduces the concept of Skills Packs: business skills that can be activated by the SPA. The QA-01 pilot is available.
 
 ---
 

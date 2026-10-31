@@ -63,23 +63,7 @@ Ne pas franchir une précondition bloquée. Une étape terminée ne constitue ni
 
 ## 7. Règles de décision et escalade
 
-Arbitrages applicables : l’Auditor constate et recommande ; l’Orchestrator peut synthétiser et recommander go/no-go ; seul le Validator décide de l’acceptation, de la fusion et du passage de phase. Aucune acceptation de dette ou de dérogation n’est implicite.
-
-| Activité | R — Responsable | A — Accountable | C — Consulté |
-|---|---|---|---|
-| Réaliser la revue et produire les constats | Auditor mobilisant QA-01 | Validator humain | Auteur du code, Orchestrator selon besoin |
-| Préparer la recommandation de fusion | Auditor mobilisant QA-01 | Validator humain | Orchestrator, auteur du code selon besoin |
-
-L’autorisation effective de fusion n’est pas une action déléguée à une IA. Le livrable historique « Validation de merge » booléen devient, conformément à l’arbitrage humain, une recommandation documentée ; ne pas publier d’approbation dans Git.
-
-Critères métier : ceux de SKILL.md, issus du contrat, de la checklist et des quality gates QA-01. Ne pas ajouter de pondération ni de seuil. Signaler chaque échec, y compris sous le seuil de sévérité critique. Si une anomalie critique, un warning critique non résolu ou un secret exposé est établi, recommander no-go en citant le critère bloquant ; ne pas bloquer techniquement la fusion ou le déploiement. Si tous les contrôles obligatoires applicables sont vérifiés et satisfaits, une recommandation go est possible, jamais une autorisation.
-
-Arbitrages métier encore nécessaires avant exécution :
-- CR-11 impose l’absence de duplication, alors que QG-CR-06 indique < 5 % ; ne pas choisir seul la règle applicable.
-- contract.md renvoie à un seuil de score du projet, tandis que QG-CR-07 indique ≥ 80/100 ; confirmer le seuil applicable si la règle projet diffère ou manque.
-- Aucune formule de score n’est fournie : obtenir la méthode de calcul applicable ou une décision humaine explicite sur le traitement de ce contrôle ; ne jamais fabriquer une note.
-
-En cas de preuve insuffisante, de critères contradictoires ou de résultat non vérifié empêchant la conclusion, indiquer « recommandation suspendue — arbitrage requis ». Soumettre le point, les sources et l’impact au Validator ; ne pas transformer cette suspension en verdict métier automatique.
+Arbitrage requis : Les critères métier (CR-11, QG-CR-06, QG-CR-07) comportent des contradictions internes. L'Auditor doit suspendre son verdict et demander l'arbitrage du Validator avant d'utiliser QA-01.
 
 ## 8. Outils et environnement d'exécution
 

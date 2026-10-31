@@ -190,6 +190,10 @@ Le livre compte actuellement 10 chapitres disponibles (ch.0 à ch.9).
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |
+| [`QA-01 Code Reviewer`](templates/skills/QA-01-Code-Reviewer/SKILL.md) | Pilote de compétence de revue de code |
+
+
+AKORIS introduit le concept de Skills Packs : des compétences métier activables par le SPA. Le pilote QA-01 est disponible.
 
 ---
 

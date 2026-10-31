@@ -8,6 +8,9 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 
 ## [Unreleased]
 
+### Added
+- Intégration du pilote QA-01 (Skills Pack) et documentation du concept dans le glossaire, METHOD.md et les README.
+
 ### Fixed
 - Alignement des compteurs (tests, sections, chapitres) et des versions dans les README, METHOD.md et le bootstrap.
 

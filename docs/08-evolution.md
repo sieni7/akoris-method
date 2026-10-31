@@ -34,3 +34,7 @@ La force d'AKORIS réside dans sa capacité à être répliquée à l'identique 
 
 ## 4. Mode Équipe (V2)
 Dans sa version actuelle (V1), AKORIS fonctionne avec un seul Validator humain. La décision 048 (V2) prévoit un mode équipe où un second humain (Reviewer) peut approuver les changements. Ce mode n'est pas encore implémenté dans les templates.
+
+
+## 5. Les Skills Packs (V1.5)
+Une compétence (Skill) est un savoir-faire métier (ex: QA-01 Code Reviewer). Un rôle (Builder, Auditor) active cette compétence via une instance SPA. Cette séparation garantit que le code n'est jamais mélangé avec la gouvernance.
