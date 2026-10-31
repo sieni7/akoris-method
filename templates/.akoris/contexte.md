@@ -11,6 +11,7 @@
 - **Objectifs (boussoles) :** zéro hallucination, zéro code spaghetti, zéro dette non maîtrisée — visés, mesurés, tracés
 - **Principe directeur :** L'IA produit ; le contrôle vérifie ; l'autorité humaine décide.
 - **Positionnement :** AKORIS n'est ni un modèle d'IA, ni un éditeur de code, ni un framework, ni un simple ensemble de prompts. C'est une méthode de gouvernance, indépendante des modèles, fournisseurs et outils.
+- **Autorité :** METHOD.md prime sur ce fichier en cas de conflit de principes.
 
 ---
 

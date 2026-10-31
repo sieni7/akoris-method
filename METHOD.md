@@ -104,3 +104,12 @@ permettant 3 sessions LLM simultanées avec accès fichier partagé.
 - **Les checklists :** `checklists/` (phase 0, bootstrap, sprint, verdict, clôture)
 - **Les scripts :** `scripts/` (init-project, validate-method) ; `.akoris/scripts/` (build-debt-index)
 - **Les exemples :** `examples/` (MVP, SaaS)
+
+---
+
+## 8. Autorité documentaire
+
+En cas de conflit entre les documents :
+1. **`METHOD.md`** prime pour les principes fondamentaux (règles de gouvernance, rôles, 3 zéros).
+2. **`contexte.md`** prime pour l'application spécifique au projet (stack, règles métier, conventions locales).
+Une instance projet ne peut pas contredire `METHOD.md`. Tout conflit doit être tranché par le Validator.
