@@ -173,7 +173,6 @@ akoris-method/
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — disponible
 ├── tests/                 ← 24 tests Python sur 4 fichiers
 ├── templates/doc/         ← documentation de projet à copier
-├── templates/skills/      ← Skills Packs (pilote QA-01 disponible)
 ├── templates/.akoris/     ← templates à copier
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
 ```
@@ -191,10 +190,6 @@ Le livre compte actuellement 12 chapitres disponibles (ch.0 à ch.11).
 | [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |
-| [`QA-01 Code Reviewer`](templates/skills/QA-01-Code-Reviewer/SKILL.md) | Pilote de compétence de revue de code |
-
-
-AKORIS introduit le concept de Skills Packs : des compétences métier activables par le SPA. Le pilote QA-01 est disponible.
 
 ---
 

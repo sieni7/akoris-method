@@ -170,7 +170,6 @@ akoris-method/
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — available
 ├── tests/                 ← 24 Python tests across 4 files
 ├── templates/doc/         ← project documentation templates to copy
-├── templates/skills/      ← Skills Packs (QA-01 pilot available)
 ├── templates/.akoris/     ← templates to copy
 └── .github/workflows/     ← CI (pytest + shellcheck + index)
 ```
@@ -188,10 +187,6 @@ The book currently has 12 available chapters (ch.0 to ch.11).
 | [`decisions/`](decisions/) | 49 frozen decisions (001-048, 050) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → closure |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | The constitution (23 sections, §0 to §22) |
-| [`QA-01 Code Reviewer`](templates/skills/QA-01-Code-Reviewer/SKILL.md) | Code-review skill pilot |
-
-
-AKORIS introduces the concept of Skills Packs: business skills that can be activated by the SPA. The QA-01 pilot is available.
 
 ---
 
