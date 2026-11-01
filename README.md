@@ -168,7 +168,7 @@ akoris-method/
 ├── LICENSE                ← MIT + Apache-2.0 + CC-BY-4.0
 ├── CONTACT.md             ← coordonnées de l'auteur
 ├── docs/                  ← le livre
-├── decisions/             ← 49 décisions figées (001-048, 050) + 1 clarification (049)
+├── decisions/             ← 50 décisions (001-048, 050-051) + 1 clarification (049)
 ├── checklists/            ← phase 0, bootstrap, sprint, verdict, clôture
 ├── scripts/               ← init-project.sh; scripts/validate-method.py — disponible
 ├── tests/                 ← 24 tests Python sur 4 fichiers
@@ -187,7 +187,7 @@ Le livre compte actuellement 12 chapitres disponibles (ch.0 à ch.11).
 |----------|---------|
 | [`METHOD.md`](METHOD.md) | Les principes fondateurs |
 | [`docs/`](docs/) | Le livre (12 chapitres disponibles, ch.0 à ch.11), dont [`ch.7 — Dettes & ADR`](docs/07-dettes-adr.md) et [`ch.8 — Évolution`](docs/08-evolution.md) |
-| [`decisions/`](decisions/) | 49 décisions figées (001-048, 050) + 1 clarification (049) |
+| [`decisions/`](decisions/) | 50 décisions (001-048, 050-051) + 1 clarification (049) |
 | [`checklists/`](checklists/) | Phase 0 → clôture |
 | [`templates/.akoris/contexte.md`](templates/.akoris/contexte.md) | La constitution (23 sections, §0 à §22) |
 
@@ -198,7 +198,7 @@ Le livre compte actuellement 12 chapitres disponibles (ch.0 à ch.11).
 Les contributions sont les bienvenues. Avant de proposer une PR :
 
 1. Lire [`METHOD.md`](METHOD.md) et les [`decisions/`](decisions/).
-2. Vérifier que la modification respecte les 49 décisions figées (001-048, 050) + 1 clarification (049)
+2. Vérifier que la modification respecte les 50 décisions (001-048, 050-051) + 1 clarification (049)
    (ou proposer un ADR pour une nouvelle décision).
 3. Lancer `pytest` (24 tests Python sur 4 fichiers).
 4. Lancer `shellcheck scripts/*.sh` (0 alerte attendue).
