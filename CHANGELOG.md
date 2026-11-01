@@ -8,6 +8,9 @@ versionnage [SemVer](https://semver.org/lang/fr/).
 
 ## [Unreleased]
 
+### Added
+- Décision 051 : formalisation des arbitrages sur les 29 spécialisations, la matrice A/B/C, le contrat commun et les déclinaisons AKORIS Standard / Lite.
+
 ### Removed
 - Retrait du pilote QA-01 et de son activation du socle V1. Le modèle des spécialisations sera redéfini avant toute nouvelle implémentation.
 
